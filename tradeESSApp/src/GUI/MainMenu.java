@@ -10,7 +10,7 @@ public class MainMenu extends GUI{
      * Método que imprime no ecrã o menu principal
      */
     protected static void showMenu() {
-        System.out.println("----- Trade ESS -----");
+        System.out.println("----- Trade ESS App -----");
 
         System.out.println("1 - Efetuar Registo");
         System.out.println("2 - Iniciar Sessão");
@@ -107,8 +107,8 @@ public class MainMenu extends GUI{
 
     private static void adminLoggedIn() {
         System.out.println("---- Bem-vindo, Administrador -----");
-        System.out.println("1 - Consultar Stocks");
-        System.out.println("2 - Expulsar Utilizador");
+        System.out.println("1 - Adicionar Stocks");
+        System.out.println("2 - Remover Stocks");
         System.out.println("0 - Sair");
         System.out.println("-------------------------");
     }

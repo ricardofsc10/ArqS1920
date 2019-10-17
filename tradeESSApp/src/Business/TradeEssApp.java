@@ -252,4 +252,10 @@ public class TradeEssApp {
         }
         return false;
     }
+
+    //lista de users
+    public Collection<User> getUsers(){
+        return userDAO.values();
+    }
+
 }
