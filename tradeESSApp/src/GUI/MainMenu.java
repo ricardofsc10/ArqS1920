@@ -1,15 +1,16 @@
 package GUI;
 
 import Business.*;
-
+import Data.*;
 import Exception.*;
+import java.sql.SQLException;
 
-public class MainMenu extends GUI{
+public class MainMenu extends GUI {
 
     /**
      * Método que imprime no ecrã o menu principal
      */
-    protected static void showMenu() {
+    protected static void showMenu() throws SQLException, Exception{
         System.out.println("----- Trade ESS -----");
 
         System.out.println("1 - Efetuar Registo");
@@ -29,7 +30,7 @@ public class MainMenu extends GUI{
      * Retorna false quando o utilizador pretende sair do programa, parando o ciclo e a execução do programa
      * @return Boolean
      */
-    private static boolean menuHandler() {
+    private static boolean menuHandler()throws SQLException, Exception {
         String option = readLine();
         if (option.equals("1")) {
             registerForm();
@@ -49,7 +50,7 @@ public class MainMenu extends GUI{
         return true;
     }
 
-    private static void logInForm(){
+    private static void logInForm()throws SQLException, Exception {
         System.out.println("---- Iniciar Sessão ----");
         System.out.println("Email:");
         String email = readLine();
@@ -58,7 +59,7 @@ public class MainMenu extends GUI{
         tryLogIn(email, password);
     }
 
-    private static void tryLogIn(String email, String password) {
+    private static void tryLogIn(String email, String password)throws SQLException, Exception  {
         try {
             iniciarSessao(email, password);
             System.out.println("Sessão iniciada com sucesso.");
@@ -74,7 +75,7 @@ public class MainMenu extends GUI{
 
     }
 
-    protected static void loggedIn() {
+    protected static void loggedIn() throws SQLException, Exception {
         logInUser();
         User utilizador = getUser();
         boolean isLoggedIn = true;
@@ -90,7 +91,7 @@ public class MainMenu extends GUI{
         }
     }
 
-    private static void traderLoggedIn(Trader t) {
+    private static void traderLoggedIn(Trader t) throws SQLException, Exception {
         System.out.println("---- Bem-vindo, negociante! ----");
         System.out.println("Nome: " + t.getUsername());
         System.out.println("Saldo:" +t.getSaldoConta());
@@ -113,7 +114,7 @@ public class MainMenu extends GUI{
         System.out.println("-------------------------");
     }
 
-    private static void logInUser() {
+    private static void logInUser()throws SQLException, Exception  {
         User utilizador = getUser();
         if(utilizador instanceof Admin){
             adminLoggedIn();
@@ -126,7 +127,9 @@ public class MainMenu extends GUI{
     /**
      * Método que imprime no ecrã o formulário de registo
      */
-    private static void registerForm() {
+    private static void registerForm() throws SQLException, Exception{
+        UserDAO ud = new UserDAO();
+        ud.addUser();
         System.out.println("---- Efetuar Registo ----");
         System.out.println("Insira o seu email:");
         String email = readLine();

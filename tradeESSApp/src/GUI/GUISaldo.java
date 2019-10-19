@@ -3,13 +3,14 @@ package GUI;
 import Business.TradeEssApp;
 import Business.Trader;
 import Business.User;
+import java.sql.SQLException;
 
 public class GUISaldo extends GUI {
 
     /**
      * Método que imprime no ecrã o menu de gestão do Saldo de um Apostador
      */
-    protected static void gerirSaldoScene() {
+    protected static void gerirSaldoScene() throws SQLException, Exception {
         System.out.println("--- Gerir Saldo ---");
         System.out.println("1 - Ver saldo");
         System.out.println("2 - Depositar Dinheiro");
@@ -20,7 +21,7 @@ public class GUISaldo extends GUI {
     /**
      * Método que recebe e trata os inputs relativos ao menu de gestão de saldo
      */
-    protected static void gerirSaldoHandler() {
+    protected static void gerirSaldoHandler() throws SQLException, Exception {
         while (true) {
             String opcao = readLine();
             if (opcao.equals("1")) {
@@ -44,14 +45,14 @@ public class GUISaldo extends GUI {
         }
     }
 
-    private static float checkSaldo(){
+    private static float checkSaldo() throws SQLException, Exception{
         return tradeEssApp.checkSaldo();
     }
 
     /**
      * Método que permite ao trader depositar dinheiro no sistema
      */
-    private static void depositarDinheiro() {
+    private static void depositarDinheiro() throws SQLException, Exception {
         Trader atual = (Trader) getUser();
         System.out.println("Qual a quantia que quer depositar?");
         int quantia = readLineInt();

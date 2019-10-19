@@ -2,12 +2,14 @@ package GUI;
 
 import Business.*;
 import Exception.*;
+import Data.*;
+import java.sql.SQLException;
 
 public class GUITrader extends GUI {
 
     private static TradeEssApp tradeEssApp;
 
-    protected static boolean traderLoggedIn(){
+    protected static boolean traderLoggedIn() throws SQLException, Exception{
         int amount;
         float stop_loss, take_profit, money, saldoConta;
         String stockName, closeBuy, closeSale;
