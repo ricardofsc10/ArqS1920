@@ -12,7 +12,7 @@ public class PositionDAO implements Map<Integer, Position> {
     public int size() {
         int size = -1;
         try {
-            connection = ConnectionDB.startConnection();
+            connection = Connect.connect();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT COUNT(*) FROM Position");
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
@@ -24,7 +24,7 @@ public class PositionDAO implements Map<Integer, Position> {
         }
         finally {
             try {
-                ConnectionDB.closeConnection(connection);
+                Connect.close(connection);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -42,7 +42,7 @@ public class PositionDAO implements Map<Integer, Position> {
         boolean res = false;
 
         try {
-            connection = ConnectionDB.startConnection();
+            connection = Connect.connect();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Position WHERE idPosition = ?");
             preparedStatement.setString(1, Integer.toString((Integer) key));
             ResultSet rs = preparedStatement.executeQuery();
@@ -53,7 +53,7 @@ public class PositionDAO implements Map<Integer, Position> {
         }
         finally{
             try{
-                ConnectionDB.closeConnection(connection);
+                Connect.close(connection);
             }
             catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -120,7 +120,7 @@ public class PositionDAO implements Map<Integer, Position> {
     public Position remove(Object key) {
         Position position = this.get((Integer) key);
         try {
-            connection = ConnectionDB.startConnection();
+            connection = Connect.connect();
             PreparedStatement preparedStatement= connection.prepareStatement("DELETE FROM Position WHERE idPosition = ?");
             preparedStatement.setString(1,Integer.toString((Integer) key));
             preparedStatement.executeUpdate();
@@ -129,7 +129,7 @@ public class PositionDAO implements Map<Integer, Position> {
             throw new NullPointerException(e.getMessage());
         }
         finally {
-            ConnectionDB.closeConnection(connection);
+            Connect.close(connection);
         }
         return position;
     }
@@ -144,7 +144,7 @@ public class PositionDAO implements Map<Integer, Position> {
     @Override
     public void clear() {
         try{
-            connection = ConnectionDB.startConnection();
+            connection = Connect.connect();
             Statement stt = connection.createStatement();
             stt.executeUpdate("DELETE FROM Position");
         }
@@ -152,7 +152,7 @@ public class PositionDAO implements Map<Integer, Position> {
             throw new NullPointerException(e.getMessage());
         }
         finally{
-            ConnectionDB.closeConnection(connection);
+            Connect.close(connection);
         }
     }
 
@@ -162,7 +162,7 @@ public class PositionDAO implements Map<Integer, Position> {
         Set<Integer> set = null;
 
         try {
-            connection = ConnectionDB.startConnection();
+            connection = Connect.connect();
             set = new TreeSet<>();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Position");
             ResultSet rs = preparedStatement.executeQuery();
@@ -174,7 +174,7 @@ public class PositionDAO implements Map<Integer, Position> {
         }
         finally {
             try {
-                ConnectionDB.closeConnection(connection);
+                Connect.close(connection);
             }
             catch (Exception e){
                 System.out.println(e.getMessage());
@@ -187,7 +187,7 @@ public class PositionDAO implements Map<Integer, Position> {
     public Collection<Position> values() {
         Collection<Position> collect = new TreeSet<>();
         try {
-            connection = ConnectionDB.startConnection();
+            connection = Connect.connect();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Position");
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
@@ -209,7 +209,7 @@ public class PositionDAO implements Map<Integer, Position> {
         }
         finally {
             try {
-                ConnectionDB.closeConnection(connection);
+                Connect.close(connection);
             }
             catch (Exception e){
                 System.out.println(e.getMessage());

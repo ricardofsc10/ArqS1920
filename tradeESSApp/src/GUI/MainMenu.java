@@ -11,7 +11,6 @@ public class MainMenu extends GUI {
      * Método que imprime no ecrã o menu principal
      */
     protected static void showMenu() throws SQLException, Exception{
-        System.out.println("----- Trade ESS -----");
         System.out.println("----- Trade ESS App -----");
 
         System.out.println("1 - Efetuar Registo");
