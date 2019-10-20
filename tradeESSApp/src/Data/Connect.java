@@ -3,23 +3,27 @@ package Data;
 import java.sql.*;
 
 public class Connect {
-    private static final String URL = "localhost:3306"; 
-    private static final String SCHEMA = "tradeessapp"; 
-    private static final String USERNAME = "root"; 
-    private static final String PASSWORD = "arqs19"; 
-    
-    public static Connection connect() { 
-        try { 
-            Class.forName("com.mysql.cj.jdbc.Driver"); 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://"+URL+"/"+SCHEMA+"?user="+USERNAME+"&password="+PASSWORD); 
-            return cn; 
-        } catch (Exception e) {
-            e.printStackTrace(); 
-        } 
-        return null;         
-    } 
-    
-    public static void close(Connection connection) { 
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "123";
+    private static final String CONN_STRING = "jdbc:mysql://localhost:3306/test";
+
+public static Connection connect() {
+    Connection conn = null;
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+        conn = DriverManager.getConnection(CONN_STRING,USERNAME,PASSWORD);
+        System.out.println("Connected");
+        return conn;
+    }
+    catch (SQLException e){
+    System.err.println(e);
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    }
+    return null;
+}
+
+public static void close(Connection connection) { 
         try { 
             connection.close(); 
         } catch (Exception e) {} 

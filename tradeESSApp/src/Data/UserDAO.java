@@ -21,7 +21,7 @@ public class UserDAO implements Map<Integer, User> {
     public User getUser(int idUser) throws SQLException, Exception{
         Connection c = Connect.connect();
         User res;
-        if(c!=null) { 
+        if(c!=null) {
             PreparedStatement ps = c.prepareStatement("SELECT * FROM user WHERE id = ?");
             ps.setInt(1, idUser);
             ResultSet rs = ps.executeQuery();
