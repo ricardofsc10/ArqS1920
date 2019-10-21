@@ -6,13 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="untitled104" />
         <module name="tradeESSApp" />
+        <module name="untitled104" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Downloads" target="1.5" />
       <module name="tradeESSApp" target="1.7" />
-      <module name="untitled104" target="1.7" />
+      <module name="untitled104" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

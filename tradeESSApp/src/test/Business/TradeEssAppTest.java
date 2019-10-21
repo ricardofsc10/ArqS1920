@@ -25,8 +25,8 @@ public class TradeEssAppTest {
 @Test
 public void testRegistarTrader() throws Exception {
     TradeEssApp tradeEssApp = new TradeEssApp();
-    tradeEssApp.registarTrader("ines@gmail.com", "ines", "pass1234", "rua", 20, 966911988, 0);
-    tradeEssApp.registarTrader("inesalves@gmail.com", "inesalves", "pass1234", "rua", 20, 966911987, 0);
+    tradeEssApp.registerTrader("ines@gmail.com", "ines", "pass1234", "rua", 20, 966911988, 0);
+    tradeEssApp.registerTrader("inesalves@gmail.com", "inesalves", "pass1234", "rua", 20, 966911987, 0);
     assertTrue(tradeEssApp.getUsers().size() == 2);
     assertTrue(tradeEssApp.idUserGivenUsername("ines") == 1);
     assertTrue(tradeEssApp.idUserGivenUsername("inesalves") == 2);
@@ -40,7 +40,7 @@ public void testRegistarTrader() throws Exception {
 @Test
 public void testIniciarSessao() throws Exception {
     TradeEssApp tradeEssApp = new TradeEssApp();
-    tradeEssApp.registarTrader("ines@gmail.com", "ines", "pass1234", "rua", 20, 966911988, 0);
+    tradeEssApp.registerTrader("ines@gmail.com", "ines", "pass1234", "rua", 20, 966911988, 0);
     tradeEssApp.iniciarSessao("ines", "pass1234");
     assertTrue(tradeEssApp.getUser().getEmail().equals("ines@gmail.com"));
 } 

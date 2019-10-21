@@ -35,4 +35,6 @@ public class Trader extends User {
     public void removeMoney(float valor){
         this.saldoConta -=valor;
     }
+
+
 }
