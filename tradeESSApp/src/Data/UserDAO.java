@@ -46,17 +46,17 @@ public class UserDAO implements Map<Integer, User> {
 }
 
 
-public void addUser() throws SQLException, Exception{
+public void addUser( String email,String username, String password, String morada,int idade, int contacto) throws SQLException, Exception{
         Connection c = Connect.connect();
         if(c!=null) { 
             PreparedStatement ps = c.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?,?,?);");
-            ps.setInt(1, 10);
-            ps.setString(2, "ole@gmail.com");
-            ps.setString(3, "ricardo");
-            ps.setString(4, "123");
-            ps.setString(5, "rua");
-            ps.setInt(6, 20);
-            ps.setInt(7,927625911);
+            ps.setInt(1, size()+1);
+            ps.setString(2, email);
+            ps.setString(3, username);
+            ps.setString(4, password);
+            ps.setString(5, morada);
+            ps.setInt(6, idade);
+            ps.setInt(7,contacto);
             ps.executeUpdate();         
             Connect.close(c);
             }

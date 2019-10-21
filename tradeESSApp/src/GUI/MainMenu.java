@@ -128,8 +128,7 @@ public class MainMenu extends GUI {
      * Método que imprime no ecrã o formulário de registo
      */
     private static void registerForm() throws SQLException, Exception{
-        UserDAO ud = new UserDAO();
-        ud.addUser();
+
         System.out.println("---- Efetuar Registo ----");
         System.out.println("Insira o seu email:");
         String email = readLine();
@@ -157,6 +156,8 @@ public class MainMenu extends GUI {
             System.out.println("Número de contacto inválido!");
             terminarSessao();
         }
+        UserDAO ud = new UserDAO();
+        ud.addUser(email,username,password,morada,idade,contacto);
         tryRegistarTrader(email, username, password, morada, idade, contacto, 0);
         System.out.println("Deseja iniciar sessão? (Sim | Não)");
         String resposta = readLine();
