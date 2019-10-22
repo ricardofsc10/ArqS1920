@@ -52,16 +52,16 @@ public class MainMenu extends GUI {
 
     private static void logInForm()throws SQLException, Exception {
         System.out.println("---- Iniciar Sessão ----");
-        System.out.println("Email:");
-        String email = readLine();
+        System.out.println("Username:");
+        String username = readLine();
         System.out.println("Password:");
         String password = readLine();
-        tryLogIn(email, password);
+        tryLogIn(username, password);
     }
 
-    private static void tryLogIn(String email, String password)throws SQLException, Exception  {
+    private static void tryLogIn(String username, String password)throws SQLException, Exception  {
         try {
-            iniciarSessao(email, password);
+            iniciarSessao(username, password);
             System.out.println("Sessão iniciada com sucesso.");
             continuar();
             loggedIn();
@@ -97,8 +97,8 @@ public class MainMenu extends GUI {
         System.out.println("Saldo:" +t.getSaldoConta());
         System.out.println("--------------------");
         System.out.println("1 - Consultar e gerir saldo");
-        System.out.println("2 - Comprar posição");
-        System.out.println("3 - Vender posição");
+        System.out.println("2 - Abrir Buy Position");
+        System.out.println("3 - Abrir Sale Position");
         System.out.println("4 - Consultar Portefólio");
         System.out.println("5 - Apagar Conta");
         System.out.println("6 - Terminar sessão");

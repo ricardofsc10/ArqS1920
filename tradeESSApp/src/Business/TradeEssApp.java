@@ -25,20 +25,11 @@ public class TradeEssApp {
 
         System.out.println(id);
         Trader trader = new Trader(id, email, username, pass, morada, age, contacto, 0);
-        if(userDAO.get(idUserGivenUsername(username)).getUsername() == null){
-            System.out.println("eheheh");
+        if((userDAO.get(idUserGivenUsername(username))) == null){
             userDAO.put(id, trader);
         }
         else throw new TraderRegistadoException("Este negociante já se encontra registado com o seguinte e-mail: " +email);
 
-        /*if(!(user instanceof Admin)){
-            user = new Trader(id, email, username, pass, morada, age, contacto, saldoConta);
-        }
-
-        if(userDAO.get(idUserGivenUsername(username)).getUsername() == null){
-            userDAO.put(id, trader);
-        }
-        else throw new TraderRegistadoException("Este negociante já se encontra registado com o seguinte e-mail: " +email);*/
     }
 
     /**
@@ -84,9 +75,8 @@ public class TradeEssApp {
         return user;
     }
 
-    public float checkSaldo(){
-        User trader = new Trader();
-        return ((Trader) trader).getSaldoConta();
+    public float checkSaldo(User u){
+        return ((Trader) u).getSaldoConta();
     }
 
     //lista dos ativos que o user tem para vender
