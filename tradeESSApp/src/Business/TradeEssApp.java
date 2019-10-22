@@ -20,16 +20,25 @@ public class TradeEssApp {
         this.positionDAO = new PositionDAO();
     }
 
-    public void registarTrader(String email, String username, String pass, String morada, int age, int contacto, float saldoConta) throws TraderRegistadoException {
+    public void registerTrader(String email, String username, String pass, String morada, int age, int contacto, float saldoConta) throws TraderRegistadoException {
         int id = userDAO.size()+1;
-        if(!(user instanceof Admin)){
+
+        System.out.println(id);
+        Trader trader = new Trader(id, email, username, pass, morada, age, contacto, 0);
+        if(userDAO.get(idUserGivenUsername(username)).getUsername() == null){
+            System.out.println("eheheh");
+            userDAO.put(id, trader);
+        }
+        else throw new TraderRegistadoException("Este negociante já se encontra registado com o seguinte e-mail: " +email);
+
+        /*if(!(user instanceof Admin)){
             user = new Trader(id, email, username, pass, morada, age, contacto, saldoConta);
         }
 
         if(userDAO.get(idUserGivenUsername(username)).getUsername() == null){
-            userDAO.put(id, user);
+            userDAO.put(id, trader);
         }
-        else throw new TraderRegistadoException("Este negociante já se encontra registado com o seguinte e-mail: " +email);
+        else throw new TraderRegistadoException("Este negociante já se encontra registado com o seguinte e-mail: " +email);*/
     }
 
     /**
@@ -50,6 +59,7 @@ public class TradeEssApp {
 
         System.out.println("-------- BEM-VINDO! -------");
     }
+
 
     //return idUser, dado o username do user
     public int idUserGivenUsername(String username){

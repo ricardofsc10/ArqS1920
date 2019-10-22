@@ -156,9 +156,7 @@ public class MainMenu extends GUI {
             System.out.println("Número de contacto inválido!");
             terminarSessao();
         }
-        UserDAO ud = new UserDAO();
-        ud.addUser(email,username,password,morada,idade,contacto);
-        tryRegistarTrader(email, username, password, morada, idade, contacto, 0);
+        tryRegistarTrader(email, username, password, morada, idade, contacto);
         System.out.println("Deseja iniciar sessão? (Sim | Não)");
         String resposta = readLine();
         if(resposta.equalsIgnoreCase("sim")){
@@ -172,9 +170,10 @@ public class MainMenu extends GUI {
         else showMenu();
     }
 
-    private static void tryRegistarTrader(String email, String username, String password, String morada, int idade, int contacto, float saldoConta) {
+    private static void tryRegistarTrader(String email, String username, String password, String morada, int idade, int contacto) {
         try {
-            registarTrader(email, username, password, morada, idade, contacto, saldoConta);
+            System.out.println("estou aqui");
+            registarTrader(email, username, password, morada, idade, contacto, 0);
             System.out.println("Utilizador registado com sucesso!");
             continuar();
         } catch (TraderRegistadoException e) {
