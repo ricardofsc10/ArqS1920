@@ -27,8 +27,9 @@ public class Trader extends User {
     }
 
     //adicionar dinheiro na conta
-    public void addMoney(float valor){
+    public float addMoney(float valor){
         this.saldoConta +=valor;
+        return saldoConta;
     }
 
     //retirar dinheiro da conta

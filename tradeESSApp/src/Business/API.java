@@ -4,8 +4,16 @@ import yahoofinance.YahooFinance;
 import yahoofinance.Stock;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Set;
 
-public class API {
+public class API extends Thread{
+
+    private TradeEssApp tradeEssApp;
+
+    public API(TradeEssApp tradeEssApp){
+        this.tradeEssApp = tradeEssApp;
+    }
 
     public static float getStkCfdBuy(String stock){
         float cfb = -1;
@@ -52,4 +60,48 @@ public class API {
         }
         return stkname;
     }
+
+    public void creation(){
+        tradeEssApp.createStock("NVDA");
+        tradeEssApp.createStock("APPL");
+    }
+
+    public void run(){
+        creation();
+
+        while(true){
+            List<Business.Stock> stocks = tradeEssApp.listaStocks();
+            for(Business.Stock s : stocks){
+                float cfdBuy = getStkCfdBuy(s.getName());
+                float cfdSale = getStkCfdSale(s.getName());
+                Set<Position> positionBuy = tradeEssApp.listarPositionBuy(s.getIdStock());
+                Set<Position> positionSale = tradeEssApp.listarPositionSale(s.getIdStock());
+
+                if(s.getCfdBuy() != cfdBuy){
+                    for(Position p : positionBuy){
+                        try{
+                            tradeEssApp.buyPosition(s.getName(), p.getAmount(), p.getStop_loss(), p.getTake_profit(), p.getStatus());
+                        } catch (Exception e) {
+                            System.out.println("Sem dinheiro suficiente :(");
+                        }
+                    }
+                    if(s.getCfdSale() != cfdSale){
+                        for(Position p : positionSale){
+                            tradeEssApp.sellPosition(s.getName(), p.getAmount(), p.getStop_loss(), p.getTake_profit(), p.getStatus());
+                        }
+                    }
+                    s.setCfdBuy(cfdBuy);
+                    s.setCfdSale(cfdSale);
+                    tradeEssApp.getStocks().put(s.getIdStock(), s);
+                }
+            }
+            try{
+                sleep(300000);
+            }
+            catch (InterruptedException e){
+                e.getMessage();
+            }
+        }
+    }
+
 }

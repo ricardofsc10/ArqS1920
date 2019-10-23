@@ -3,8 +3,13 @@ package Business;
 
 import Data.*;
 import Exception.*;
+import GUI.MainMenu;
+import yahoofinance.YahooFinance;
 
+import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
+import java.util.concurrent.locks.Lock;
 
 public class TradeEssApp {
 
@@ -12,6 +17,8 @@ public class TradeEssApp {
     private UserDAO userDAO;
     private StockDAO stockDAO;
     private PositionDAO positionDAO;
+
+    private Lock positionLock;
 
 
     public TradeEssApp() {
@@ -52,7 +59,14 @@ public class TradeEssApp {
      * @throws PasswordIncorretaException
      * @throws UtilizadorInexistenteException
      */
-    public void iniciarSessao(String username, String password) throws PasswordIncorretaException, UtilizadorInexistenteException {
+    public int iniciarSessao(String username, String password) throws Exception {
+
+        //verificar se é admin
+        if(username.equals("admin") && password.equals("admin")){
+            MainMenu.adminLoggedIn();
+            return 0;
+        }
+
 
         if(this.userDAO.containsKey(idUserGivenUsername(username))){
             user = this.userDAO.get(idUserGivenUsername(username));
@@ -60,7 +74,9 @@ public class TradeEssApp {
         }
         else throw new UtilizadorInexistenteException("Utilizador inexistente!");
 
-        System.out.println("-------- BEM-VINDO, " + username + "! -------");
+        System.out.println("Sessão iniciada com sucesso.");
+        MainMenu.traderLoggedIn();
+        return 0;
     }
 
 
@@ -84,9 +100,8 @@ public class TradeEssApp {
     /**
      * Método que termina a sessão do utilizador atual.
      */
-    public void terminarSessao(){
-        user = null;
-        System.out.println("Sessão terminada com sucesso!");
+    public void terminarSessao(User user){
+        System.out.println("Sessão terminada com sucesso! Até já, " +user);
     }
 
     /**
@@ -323,9 +338,10 @@ public class TradeEssApp {
      * Apagar conta de um utilizador
      * @throws UtilizadorInexistenteException
      */
-    public void deleteAccount() throws UtilizadorInexistenteException{
-        if(this.userDAO.containsKey(user.getId())){
-            this.userDAO.remove(idUserGivenUsername(user.getUsername()));
+    public void deleteAccount(User atual) throws UtilizadorInexistenteException{
+        if(this.userDAO.containsKey(atual.getId())){
+            this.userDAO.remove(idUserGivenUsername(atual.getUsername()));
+            terminarSessao(atual);
         }
         else throw new UtilizadorInexistenteException("Ação abortada! Este utilizador não existe...");
     }
@@ -370,24 +386,64 @@ public class TradeEssApp {
      * @param stockName
      */
     public void createStock(String stockName) {
-        int size = stockDAO.size() + 1;
-        System.out.print("No mercado há estes stocks: " + size+"\n");
-        Stock stock = new Stock();
-        if (stockName!=null && API.getStkName(stockName) != null && !stockAvailable(stockName))
-            try {
-                stock.setIdStock(size);
-                stock.setName(API.getStkName(stockName));
-                System.out.println("Stock Symbol:   " + stock.getName());
-                stock.setOwner(API.getStkCompany(stockName));
-                System.out.println("Stock Company:   " + stock.getOwner());
-                stock.setCfdBuy(API.getStkCfdBuy(stockName));
-                stock.setCfdSale(API.getStkCfdSale(stockName));
-                stockDAO.put(size, stock);
-            } catch (NullPointerException e) {
-                System.out.println("Erro a aceder às informações do stock pedido! Stock não criado");
-            }
-        else System.out.println(stockName+" não existe");
+        int size = stockDAO.size() +1;
 
+        BigDecimal value;
+        float fvalue;
+        Stock stock = new Stock();
+        yahoofinance.Stock s = null;
+        try{
+            s = YahooFinance.get(stockName);
+            if(!this.stockAvailable(stockName) && s!= null){
+                stock.setIdStock(size);
+                value = s.getQuote().getBid();
+                fvalue = (value == null) ? 0 : value.floatValue();
+                stock.setCfdSale(fvalue);
+                value = s.getQuote().getAsk();
+                fvalue = (value == null) ? 0 : value.floatValue();
+                stock.setCfdBuy(fvalue);
+                this.stockDAO.put(size, stock);
+            }
+        }
+        catch (IOException e) {
+        e.printStackTrace();
+        }
     }
 
+    public Set<Position> listarPositionSale(int id) {
+        Set<Position> res = new HashSet<>();
+        positionLock.lock();
+        try {
+            for (Position p : positionDAO.values())
+                if (p.getIdPosition() == id && p.getType().equalsIgnoreCase("Para venda")) res.add(p);
+        }
+        finally {
+            positionLock.unlock();
+        }
+        return res;
+    }
+
+    public Set<Position> listarPositionBuy(int id) {
+        Set<Position> res = new HashSet<>();
+        positionLock.lock();
+        try {
+            for (Position p : positionDAO.values())
+                if (p.getIdPosition() == id && p.getType().equalsIgnoreCase("Para compra")) res.add(p);
+        }
+        finally {
+            positionLock.unlock();
+        }
+        return res;
+    }
+
+    public StockDAO getStocks(){
+        return stockDAO;
+    }
+
+    public void registarStock(Stock s) throws StockExistenteException {
+        int id = stockDAO.size()+1;
+        if(!stockDAO.containsValue(stockNameGivenId(id)))
+            stockDAO.put(id, s);
+        else throw new StockExistenteException("Este stock já existe...");
+    }
 }

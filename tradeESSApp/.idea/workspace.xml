@@ -5,88 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60f594b7-ed9f-43b8-91a1-b4f23770f6a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/documentation/Business/TradeEssApp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/Business/class-use/TradeEssApp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/Business/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/Business/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/Business/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/allclasses-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/allclasses.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/allpackages-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/constant-values.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/deprecated-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/element-list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/help-doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index-files/index-9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/external/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-bg_flat_75_ffffff_40x100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-bg_glass_65_ffffff_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-bg_glass_75_dadada_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-icons_222222_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-icons_454545_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-icons_888888_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jquery-3.3.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jquery-migrate-3.0.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jquery-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jquery-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jquery-ui.structure.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jquery-ui.structure.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jszip-utils/dist/jszip-utils-ie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jszip-utils/dist/jszip-utils-ie.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jszip-utils/dist/jszip-utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jszip-utils/dist/jszip-utils.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jszip/dist/jszip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/jquery/jszip/dist/jszip.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/member-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/member-search-index.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/overview-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/package-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/package-search-index.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/resources/glass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/resources/x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/type-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation/type-search-index.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Business/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_17_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jimmoores_quandl_core_2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_opencsv_opencsv_4_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_ws_rs_jakarta_ws_rs_api_2_1_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_beanshell_bsh_2_0b4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_jakarta_inject_2_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_locator_2_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_client_2_29_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_29_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_inject_jersey_hk2_2_29_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_22_0_CR2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20190722.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_8_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exception/StockExistenteException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Business/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Business/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/API.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Business/TradeEssApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/TradeEssApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/PositionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/PositionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/StockDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/StockDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Business/Trader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/Trader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Connect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUIAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUIAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUISaldo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUISaldo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/GUITrader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUITrader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Business/Stock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Business/Stock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Business/API.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Business/API.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Business/TradeEssApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Business/TradeEssApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Data/PositionDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/PositionDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Data/StockDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/StockDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Business/Trader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Business/Trader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/Connect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/Connect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Data/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUIAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUIAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUISaldo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUISaldo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUITrader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUITrader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/Business/TradeEssAppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/Business/TradeEssAppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/Business/TraderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/Business/TraderTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled104.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -328,7 +303,7 @@
       <workItem from="1571762277896" duration="295000" />
       <workItem from="1571762579108" duration="9388000" />
       <workItem from="1571821829959" duration="1154000" />
-      <workItem from="1571830627805" duration="2078000" />
+      <workItem from="1571830627805" duration="21437000" />
     </task>
     <servers />
   </component>

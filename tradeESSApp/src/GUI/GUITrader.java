@@ -19,8 +19,7 @@ public class GUITrader extends GUI {
             case "1": // consultar e gerir saldo
                 GUISaldo.gerirSaldoScene();
                 GUISaldo.gerirSaldoHandler();
-                continuar();
-                MainMenu.loggedIn();
+                break;
 
             case "2": //posição de compra
                 System.out.println(tradeEssApp.listaStocks());
@@ -51,7 +50,7 @@ public class GUITrader extends GUI {
                     System.out.println("Não existe!\n");
                 }
                 continuar();
-                traderLoggedIn();
+                MainMenu.traderLoggedIn();
                 break;
 
             case "3": //vender posição
@@ -80,35 +79,36 @@ public class GUITrader extends GUI {
                     System.out.println("Não existe!\n");
                 }
                 continuar();
-                traderLoggedIn();
+                MainMenu.traderLoggedIn();
                 break;
 
 
             case "4": //consultar portefólio
                 System.out.println("O seu portefólio: " + tradeEssApp.checkPortfolio());
                 continuar();
+                MainMenu.traderLoggedIn();
                 break;
 
             case "5": //apagar conta
                 try{
-                    tradeEssApp.deleteAccount();
+                    User atual = getUser();
+                    tradeEssApp.deleteAccount(atual);
                 }
                 catch(UtilizadorInexistenteException e){
                     e.printStackTrace();
-                    traderLoggedIn();
                 }
                 continuar();
-                traderLoggedIn();
+                MainMenu.showMenu();
                 break;
             case "6": //terminar sessão
-                tradeEssApp.terminarSessao();
+                User atual = getUser();
+                tradeEssApp.terminarSessao(atual);
                 MainMenu.showMenu();
                 break;
 
             default:
                 System.out.println("Input não reconhecido...");
-                continuar();
-                MainMenu.showMenu();
+                MainMenu.traderLoggedIn();
                 break;
 
         }

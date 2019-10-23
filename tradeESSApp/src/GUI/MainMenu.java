@@ -34,15 +34,15 @@ public class MainMenu extends GUI {
         String option = readLine();
         if (option.equals("1")) {
             registerForm();
-            showMenu();
         } else if (option.equals("2")) {
             logInForm();
-            showMenu();
         } else if (option.equals("3")) {
             //aqui tem que mostrar o stock das cenas
+            getStock();
+            continuar();
             showMenu();
         } else if (option.equals("0")) {
-            terminarSessao();
+            terminarSessao(getUser());
             return false;
         } else {
             System.out.println("Input não reconhecido.");
@@ -62,8 +62,7 @@ public class MainMenu extends GUI {
     private static void tryLogIn(String username, String password)throws SQLException, Exception  {
         try {
             iniciarSessao(username, password);
-            System.out.println("Sessão iniciada com sucesso.");
-            continuar();
+
             loggedIn();
         } catch (PasswordIncorretaException e) {
             System.out.println("Password Incorreta.");
@@ -76,7 +75,7 @@ public class MainMenu extends GUI {
     }
 
     protected static void loggedIn() throws SQLException, Exception {
-        logInUser();
+        //logInUser();
         User utilizador = getUser();
         boolean isLoggedIn = true;
         if(utilizador instanceof Admin){
@@ -91,8 +90,19 @@ public class MainMenu extends GUI {
         }
     }
 
-    private static void traderLoggedIn(Trader t) throws SQLException, Exception {
-        System.out.println("---- Bem-vindo, negociante! ----");
+    private static void logInUser()throws SQLException, Exception  {
+        User utilizador = getUser();
+        if(utilizador instanceof Admin){
+            adminLoggedIn();
+        }
+        else if(utilizador instanceof Trader){
+            traderLoggedIn();
+        }
+    }
+
+    public static void traderLoggedIn() throws SQLException, Exception {
+        Trader t = (Trader) getUser();
+        System.out.println("---- Bem-vindo, " +t.getUsername() + "! ----");
         System.out.println("Nome: " + t.getUsername());
         System.out.println("Saldo:" +t.getSaldoConta());
         System.out.println("--------------------");
@@ -102,26 +112,15 @@ public class MainMenu extends GUI {
         System.out.println("4 - Consultar Portefólio");
         System.out.println("5 - Apagar Conta");
         System.out.println("6 - Terminar sessão");
-        System.out.println("0 - Sair");
         System.out.println("--------------------");
     }
 
-    private static void adminLoggedIn() {
+    public static void adminLoggedIn() {
         System.out.println("---- Bem-vindo, Administrador -----");
         System.out.println("1 - Adicionar Stocks");
         System.out.println("2 - Remover Stocks");
-        System.out.println("0 - Sair");
+        System.out.println("0 - Terminar sessão");
         System.out.println("-------------------------");
-    }
-
-    private static void logInUser()throws SQLException, Exception  {
-        User utilizador = getUser();
-        if(utilizador instanceof Admin){
-            adminLoggedIn();
-        }
-        else if(utilizador instanceof Trader){
-            traderLoggedIn((Trader) utilizador);
-        }
     }
 
     /**
@@ -146,7 +145,7 @@ public class MainMenu extends GUI {
         }
         else{
             System.out.println("Idade inválida!");
-            terminarSessao();
+            terminarSessao(getUser());
         }
 
         System.out.println("Insira o seu contacto telefónico:");
@@ -154,7 +153,7 @@ public class MainMenu extends GUI {
         int length = String.valueOf(contacto).length();
         if(length != 9){
             System.out.println("Número de contacto inválido!");
-            terminarSessao();
+            terminarSessao(getUser());
         }
         tryRegistarTrader(email, username, password, morada, idade, contacto);
         System.out.println("Deseja iniciar sessão? (Sim | Não)");

@@ -2,6 +2,8 @@ package GUI;
 
 import Business.*;
 import Exception.*;
+import com.jimmoores.quandl.*;
+import com.jimmoores.quandl.classic.ClassicQuandlSession;
 
 import java.sql.SQLException;
 import java.util.*;
@@ -9,16 +11,11 @@ import java.io.*;
 
 public class GUI {
 
-    public static TradeEssApp tradeEssApp;
+    public static TradeEssApp tradeEssApp = new TradeEssApp();
 
     public static void main(String[] args) throws SQLException,Exception {
-        tradeEssApp = new TradeEssApp();
-        tradeEssApp.createStock("INTC");
-        tradeEssApp.createStock("NVDA");
-        tradeEssApp.createStock("GL=F");
-        tradeEssApp.createStock("CL=F");
-        tradeEssApp.createStock("GOOG");
-        tradeEssApp.createStock("AAPL");
+        API api = new API(tradeEssApp);
+        //api.run();
 
         MainMenu.showMenu();
     }
@@ -38,6 +35,11 @@ public class GUI {
         return scanner.nextInt();
     }
 
+    protected static float readLineFloat(){
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextFloat();
+    }
+
     /**
      * Método que tentar iniciar sessão com os parâmetros que lhe são passados.
      * Caso o utilizado não seja registado, ou a password seja incorreta, é enviada uma Exceção.
@@ -46,7 +48,7 @@ public class GUI {
      * @throws UtilizadorInexistenteException
      * @throws PasswordIncorretaException
      */
-    protected static void iniciarSessao(String username, String password) throws UtilizadorInexistenteException, PasswordIncorretaException{
+    protected static void iniciarSessao(String username, String password) throws Exception {
         tradeEssApp.iniciarSessao(username,password);
     }
     /**
@@ -64,8 +66,8 @@ public class GUI {
     /**
      * Método que termina a sessão no sistema
      */
-    protected static void terminarSessao(){
-        tradeEssApp.terminarSessao();
+    protected static void terminarSessao(User u){
+        tradeEssApp.terminarSessao(u);
     }
 
     /**
@@ -94,6 +96,10 @@ public class GUI {
 
     protected static List<Stock> getStock(){
         return tradeEssApp.listaStocks();
+    }
+
+    protected static void registarStock(Stock s) throws StockExistenteException {
+        tradeEssApp.registarStock(s);
     }
 
 

@@ -322,4 +322,27 @@ public class UserDAO implements Map<Integer, User> {
 
         return map.entrySet();
     }
+
+    public void updateSaldo(User u){
+        try{
+            connection = Connect.connect();
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE USER set saldo = ? where id = ?");
+            preparedStatement.setFloat(1, ((Trader) u).getSaldoConta());
+            preparedStatement.setInt(2, u.getId());
+
+
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException e){
+            e.getMessage();
+        }
+        finally {
+            try{
+                Connect.close(connection);
+            }
+            catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 }

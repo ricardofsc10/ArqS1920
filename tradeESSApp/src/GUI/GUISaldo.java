@@ -9,7 +9,8 @@ import java.sql.SQLException;
 
 public class GUISaldo extends GUI {
 
-    private User user;
+    private static UserDAO userDAO = new UserDAO();
+    private static User user;
 
     /**
      * Método que imprime no ecrã o menu de gestão do Saldo de um Apostador
@@ -39,6 +40,7 @@ public class GUISaldo extends GUI {
                 gerirSaldoScene();
             }
             else if (opcao.equals("0")) {
+                MainMenu.traderLoggedIn();
                 break;
             } else {
                 System.out.println("Input não reconhecido!");
@@ -61,6 +63,11 @@ public class GUISaldo extends GUI {
         int quantia = readLineInt();
         atual.addMoney(quantia);
         System.out.println(atual.getSaldoConta());
-        ((Trader) atual).setSaldoConta(atual.getSaldoConta());
+        (atual).setSaldoConta(atual.getSaldoConta());
+        System.out.println(atual.getId());
+        userDAO.updateSaldo(atual);
+        //Trader trader = (Trader) userDAO.get(atual.getId());
+        //atual.setSaldoConta(novoSaldo);
+        //userDAO.put(atual.getId(), atual);
     }
 }
