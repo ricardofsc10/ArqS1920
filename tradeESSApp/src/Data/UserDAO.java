@@ -132,14 +132,14 @@ public class UserDAO implements Map<Integer, User> {
 
     @Override
     public User get(Object key) {
-        User user = new User();
-
+        User user = null;
         try{
             connection = Connect.connect();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM User WHERE id =?");
             preparedStatement.setString(1, Integer.toString((Integer) key));
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
+                user = new Trader();
                 user.setId(resultSet.getInt("id"));
                 user.setEmail(resultSet.getString("email"));
                 user.setUsername(resultSet.getString("username"));
@@ -179,8 +179,10 @@ public class UserDAO implements Map<Integer, User> {
             preparedStatement.setString(1, Integer.toString((Integer) key));
             preparedStatement.executeUpdate();
 
-            preparedStatement = connection.prepareStatement("INSERT INTO user VALUES (?,?,?,?,?,?,?,?);");
-            preparedStatement.setString(1, Integer.toString((Integer) key));
+            System.out.println("base de dados :(((");
+
+            preparedStatement = connection.prepareStatement("INSERT INTO user(id, email, username, password, morada, idade, contacto, saldo) VALUES (?,?,?,?,?,?,?,?);");
+            preparedStatement.setString(1, Integer.toString(key));
             preparedStatement.setString(2, value.getEmail());
             preparedStatement.setString(3, value.getUsername());
             preparedStatement.setString(4, value.getPassword());
@@ -190,6 +192,8 @@ public class UserDAO implements Map<Integer, User> {
             preparedStatement.setFloat(8, ((Trader) value).getSaldoConta());
 
             preparedStatement.executeUpdate();
+
+            System.out.println("ai mãe");
         }
         catch (SQLException e){
             e.getMessage();
@@ -297,6 +301,7 @@ public class UserDAO implements Map<Integer, User> {
                 collection.add(user);
 
             }
+            System.out.println(collection);
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }

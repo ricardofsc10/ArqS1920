@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class GUITrader extends GUI {
 
-    private static TradeEssApp tradeEssApp;
+    public static TradeEssApp tradeEssApp = new TradeEssApp();
 
     protected static boolean traderLoggedIn() throws SQLException, Exception{
         int amount;
@@ -32,7 +32,7 @@ public class GUITrader extends GUI {
                 stop_loss = readLineInt();
                 System.out.println("Defina o Take Profit: ");
                 take_profit = readLineInt();
-                saldoConta = tradeEssApp.checkSaldo();
+                saldoConta = tradeEssApp.checkSaldo(getUser());
 
                 if(tradeEssApp.listaStocks().contains(tradeEssApp.idStockGivenName(stockName))){
                     if(tradeEssApp.isAbleToBuy(stockName, amount, saldoConta)){
@@ -103,7 +103,7 @@ public class GUITrader extends GUI {
             case "6": //terminar sessão
                 tradeEssApp.terminarSessao();
                 MainMenu.showMenu();
-                return false;
+                break;
 
             default:
                 System.out.println("Input não reconhecido...");
