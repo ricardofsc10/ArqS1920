@@ -172,7 +172,6 @@ public class MainMenu extends GUI {
 
     private static void tryRegistarTrader(String email, String username, String password, String morada, int idade, int contacto) {
         try {
-            System.out.println("estou aqui");
             registarTrader(email, username, password, morada, idade, contacto, 0);
             System.out.println("Utilizador registado com sucesso!");
             continuar();

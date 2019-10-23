@@ -13,6 +13,7 @@ public class TradeEssApp {
     private StockDAO stockDAO;
     private PositionDAO positionDAO;
 
+
     public TradeEssApp() {
         this.user = null;
         this.userDAO = new UserDAO();
@@ -20,6 +21,17 @@ public class TradeEssApp {
         this.positionDAO = new PositionDAO();
     }
 
+    /**
+     *
+     * @param email
+     * @param username
+     * @param pass
+     * @param morada
+     * @param age
+     * @param contacto
+     * @param saldoConta
+     * @throws TraderRegistadoException
+     */
     public void registerTrader(String email, String username, String pass, String morada, int age, int contacto, float saldoConta) throws TraderRegistadoException {
         int id = userDAO.size()+1;
 
@@ -48,11 +60,17 @@ public class TradeEssApp {
         }
         else throw new UtilizadorInexistenteException("Utilizador inexistente!");
 
-        System.out.println("-------- BEM-VINDO! -------");
+        System.out.println("-------- BEM-VINDO, " + username + "! -------");
     }
 
 
     //return idUser, dado o username do user
+
+    /**
+     *
+     * @param username
+     * @return idUser
+     */
     public int idUserGivenUsername(String username){
         int id = -1;
         for(User user : userDAO.values()){
@@ -71,15 +89,27 @@ public class TradeEssApp {
         System.out.println("Sessão terminada com sucesso!");
     }
 
+    /**
+     *
+     * @return User
+     */
     public User getUser(){
         return user;
     }
 
+    /**
+     * Check saldo do utilizador
+     * @param u
+     * @return float
+     */
     public float checkSaldo(User u){
         return ((Trader) u).getSaldoConta();
     }
 
-    //lista dos ativos que o user tem para vender
+    /**
+     * Lista dos ativos que o user tem para vender
+     * @return Lisa de ativos
+     */
     public List<Stock> listStocksSale(){
         List<Stock> stocks = new ArrayList<>();
         for(Position p : positionDAO.values()){
@@ -90,6 +120,12 @@ public class TradeEssApp {
     }
 
     //dado um idStock, retorna o stock
+
+    /**
+     * Vê qual o stock que tem aquele um dado id
+     * @param idStock
+     * @return
+     */
     private Stock stockNameGivenId(int idStock) {
         Stock stock = null;
         for(Stock s : stockDAO.values()){
@@ -99,30 +135,59 @@ public class TradeEssApp {
         return stock;
     }
 
-    //lista ativos para compra
+    /**
+     * Lista ativos de compra
+     * @return stocks
+     */
     public List<Stock> listaStocks() {
         List<Stock> stocks = new ArrayList<>();
         stocks.addAll(stockDAO.values());
         return stocks;
     }
 
-    //checkar se o user tem poder de compra, ou seja, se tem dinheiro para fazer compras
+    /**
+     * checkar se o user tem poder de compra, ou seja, se tem dinheiro para fazer compras
+     * @param stockname
+     * @param value
+     * @param accountBalance
+     * @return
+     */
     public boolean isAbleToBuy(String stockname, int value, float accountBalance){
         return (accountBalance > value * stockDAO.get(idStockGivenName(stockname)).getCfdBuy());
     }
 
-    //checkar se existe profit pra comprar no "mercado"
+    /**
+     * checkar se existe profit pra comprar no "mercado"
+     * @param stockName
+     * @param stop_loss
+     * @param take_profit
+     * @return
+     */
     public boolean profitBuyAvailable(String stockName, float stop_loss, float take_profit){
         return ((stockDAO.get(idStockGivenName(stockName)).getCfdBuy() >= take_profit
                 || (stockDAO.get(idStockGivenName(stockName)).getCfdBuy()) <= stop_loss));
     }
 
-    //checkar se existe profit pra venda no "mercado"
+    /**
+     * checkar se existe profit pra venda no "mercado"
+     * @param stockName
+     * @param stop_loss
+     * @param take_profit
+     * @return
+     */
     public boolean profitSaleAvailable(String stockName, float stop_loss, float take_profit){
         return ((stockDAO.get(idStockGivenName(stockName)).getCfdSale() >= take_profit
                 || (stockDAO.get(idStockGivenName(stockName)).getCfdSale()) <= stop_loss));
     }
 
+    /**
+     * Cria posição de compra
+     * @param stockName
+     * @param valor
+     * @param stop_loss
+     * @param take_profit
+     * @param fecharNegocio
+     */
     public void buyPosition(String stockName, int valor, float stop_loss, float take_profit, String fecharNegocio){
         int size = positionDAO.size()+1;
         float value;
@@ -149,7 +214,10 @@ public class TradeEssApp {
         }
     }
 
-    //adicionar money na conta (quando o user adicionar ou quando fizer uma venda)
+    /**
+     * adicionar dinehiro na conta (quando o user adicionar ou quando fizer uma venda)
+     * @param valor
+     */
     public void addMoney(float valor){
         User u = new Trader();
         System.out.println(u.getUsername() + " tem: " + ((Trader) u).getSaldoConta());
@@ -159,6 +227,14 @@ public class TradeEssApp {
         userDAO.put(u.getId(), u);
     }
 
+    /**
+     * Cria posição de venda
+     * @param stockName
+     * @param valor
+     * @param stop_loss
+     * @param take_profit
+     * @param fecharNegocio
+     */
     public void sellPosition(String stockName, int valor, float stop_loss, float take_profit, String fecharNegocio){
         int size = positionDAO.size()+1;
         float value;
@@ -185,7 +261,10 @@ public class TradeEssApp {
         }
     }
 
-    //retirar money da conta (quando o user retirar ou quando fizer uma compra)
+    /**
+     * Retira dinehiro da conta (quando o user retirar ou quando fizer uma compra)
+     * @param valor
+     */
     public void removeMoney(float valor){
         User u = new Trader();
         System.out.println(u.getUsername() + " tem: " + ((Trader) u).getSaldoConta());
@@ -196,6 +275,12 @@ public class TradeEssApp {
     }
 
     //return idStock, dado o nome do stock
+
+    /**
+     * Dá o id do stock com um dado nome
+     * @param stockName
+     * @return idStock
+     */
     public int idStockGivenName(String stockName){
         int id = -1;
         for(Stock stock:stockDAO.values()){
@@ -206,6 +291,12 @@ public class TradeEssApp {
     }
 
     //quantidade total para venda
+
+    /**
+     *
+     * @param stockName
+     * @return
+     */
     public int amount(String stockName) {
         int a = 0;
         for(Position p : positionDAO.values()){
@@ -215,7 +306,10 @@ public class TradeEssApp {
         return a;
     }
 
-    //abrir portefólio
+    /**
+     * Check Portefólio
+     * @return lista de positions
+     */
     public List<Position> checkPortfolio(){
         List<Position> positions = new ArrayList<>();
         for(Position p : positionDAO.values()){
@@ -225,7 +319,10 @@ public class TradeEssApp {
         return positions;
     }
 
-    //apagar conta de um user
+    /**
+     * Apagar conta de um utilizador
+     * @throws UtilizadorInexistenteException
+     */
     public void deleteAccount() throws UtilizadorInexistenteException{
         if(this.userDAO.containsKey(user.getId())){
             this.userDAO.remove(idUserGivenUsername(user.getUsername()));
@@ -233,7 +330,11 @@ public class TradeEssApp {
         else throw new UtilizadorInexistenteException("Ação abortada! Este utilizador não existe...");
     }
 
-    //remover stock
+    /**
+     * Remover stock
+     * @param stockName
+     * @throws NoStockAvailableException
+     */
     public void removeStock(String stockName) throws NoStockAvailableException{
         if(stockAvailable(stockName)){
             this.stockDAO.remove(idStockGivenName(stockName));
@@ -243,7 +344,11 @@ public class TradeEssApp {
 
     }
 
-    //verificar se existe stock de cenas
+    /**
+     * verificar se stock  existe
+     * @param stockName
+     * @return
+     */
     public boolean stockAvailable(String stockName){
         for(Stock s : stockDAO.values()){
             if(s.getName().equals(stockName))
@@ -252,9 +357,37 @@ public class TradeEssApp {
         return false;
     }
 
-    //lista de users
+    /**
+     * Lista os utilizadores existentes
+     * @return lista de utilizadores
+     */
     public Collection<User> getUsers(){
         return userDAO.values();
+    }
+
+    /**
+     * Criar Stock
+     * @param stockName
+     */
+    public void createStock(String stockName) {
+        int size = stockDAO.size() + 1;
+        System.out.print("No mercado há estes stocks: " + size+"\n");
+        Stock stock = new Stock();
+        if (stockName!=null && API.getStkName(stockName) != null && !stockAvailable(stockName))
+            try {
+                stock.setIdStock(size);
+                stock.setName(API.getStkName(stockName));
+                System.out.println("Stock Symbol:   " + stock.getName());
+                stock.setOwner(API.getStkCompany(stockName));
+                System.out.println("Stock Company:   " + stock.getOwner());
+                stock.setCfdBuy(API.getStkCfdBuy(stockName));
+                stock.setCfdSale(API.getStkCfdSale(stockName));
+                stockDAO.put(size, stock);
+            } catch (NullPointerException e) {
+                System.out.println("Erro a aceder às informações do stock pedido! Stock não criado");
+            }
+        else System.out.println(stockName+" não existe");
+
     }
 
 }

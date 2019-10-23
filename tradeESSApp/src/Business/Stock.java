@@ -76,4 +76,14 @@ public class Stock implements Comparable<Stock>{
     public int compareTo(Stock s) {
         return idStock - s.idStock;
     }
+
+    //HASHCODE
+    public int hashCode() {
+        int res = getIdStock();
+        res = 59 * res + getName().hashCode();
+        res = 59 * res + getOwner().hashCode();
+        res = 59 * res + (cfdBuy != +0.0f ? Float.floatToIntBits(cfdBuy) : 0);
+        res = 59 * res + (cfdSale != +0.0f ? Float.floatToIntBits(cfdSale) : 0);
+        return res;
+    }
 }

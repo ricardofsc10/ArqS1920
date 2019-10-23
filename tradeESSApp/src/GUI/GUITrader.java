@@ -16,13 +16,13 @@ public class GUITrader extends GUI {
 
         String opcao = readLine();
         switch (opcao){
-            case "1": // consultar saldo
+            case "1": // consultar e gerir saldo
                 GUISaldo.gerirSaldoScene();
                 GUISaldo.gerirSaldoHandler();
                 continuar();
                 MainMenu.loggedIn();
 
-            case "2": //comprar posição
+            case "2": //posição de compra
                 System.out.println(tradeEssApp.listaStocks());
                 System.out.println("Insira o nome do stock que quer comprar: ");
                 stockName = readLine();

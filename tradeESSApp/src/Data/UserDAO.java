@@ -98,7 +98,6 @@ public class UserDAO implements Map<Integer, User> {
         boolean res = false;
         try{
             connection = Connect.connect();
-            System.out.println("Sucesso na conexão!!");
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM user WHERE id = ?");
             preparedStatement.setString(1, Integer.toString((Integer) key));
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -301,7 +300,6 @@ public class UserDAO implements Map<Integer, User> {
                 collection.add(user);
 
             }
-            System.out.println(collection);
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }

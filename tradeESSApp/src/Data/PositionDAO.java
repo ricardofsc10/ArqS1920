@@ -78,10 +78,8 @@ public class PositionDAO implements Map<Integer, Position> {
     public Position get(Object key) {
         Position position = new Position();
 
-        // ISTO ACHO QUE É ASSIM, MAS VAI DEPENDER DOS NOMES QUE DERMOS ÀS CENAS NA BD. PARA O PUT() É IGUAL
-        /*
         try {
-            connection = ConnectionDB.startConnection();
+            connection = Connect.connect();
             PreparedStatement ppstt = connection.prepareStatement("SELECT * FROM Position WHERE idPosition= ?");
             ppstt.setString(1,Integer.toString((Integer) key));
             ResultSet rs = ppstt.executeQuery();
@@ -101,13 +99,13 @@ public class PositionDAO implements Map<Integer, Position> {
         }
         finally{
             try {
-                ConnectionDB.closeConnection(connection);
+                Connect.close(connection);
             }
             catch (Exception e){
                 System.out.printf(e.getMessage());
             }
 
-        }*/
+        }
         return position;
     }
 

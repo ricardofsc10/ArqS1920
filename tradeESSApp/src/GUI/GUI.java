@@ -9,9 +9,17 @@ import java.io.*;
 
 public class GUI {
 
-    public static TradeEssApp tradeEssApp = new TradeEssApp();
+    public static TradeEssApp tradeEssApp;
 
     public static void main(String[] args) throws SQLException,Exception {
+        tradeEssApp = new TradeEssApp();
+        tradeEssApp.createStock("INTC");
+        tradeEssApp.createStock("NVDA");
+        tradeEssApp.createStock("GL=F");
+        tradeEssApp.createStock("CL=F");
+        tradeEssApp.createStock("GOOG");
+        tradeEssApp.createStock("AAPL");
+
         MainMenu.showMenu();
     }
 
@@ -50,7 +58,6 @@ public class GUI {
      * @throws TraderRegistadoException
      */
     protected static void registarTrader(String email, String username, String password, String morada, int idade, int contacto, float saldoConta) throws TraderRegistadoException{
-        System.out.println("yay");
         tradeEssApp.registerTrader(email, username, password, morada, idade, contacto, 0);
     }
 
