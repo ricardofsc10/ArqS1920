@@ -6,12 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="60f594b7-ed9f-43b8-91a1-b4f23770f6a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaseDeDados/tradeessapp_position.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaseDeDados/tradeessapp_stock.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaseDeDados/tradeessapp_user.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Business/TradeEssApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/TradeEssApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Business/TradeEssApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Business/TradeEssApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/allclasses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Business/API.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Business/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Business/Position.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Business/Stock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Business/TradeEssApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Business/Trader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Business/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/Connect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/PositionDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/StockDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Exception/NoStockAvailableException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Exception/PasswordIncorretaException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Exception/StockExistenteException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Exception/TraderRegistadoException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Exception/UtilizadorInexistenteException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUIAdmin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUISaldo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUITrader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/untitled104.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/Business/TradeEssAppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/Business/TraderTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled104.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -256,6 +280,8 @@
       <workItem from="1571830627805" duration="21589000" />
       <workItem from="1571913647277" duration="1520000" />
       <workItem from="1571919653134" duration="1367000" />
+      <workItem from="1571922643789" duration="424000" />
+      <workItem from="1571929121940" duration="296000" />
     </task>
     <servers />
   </component>
