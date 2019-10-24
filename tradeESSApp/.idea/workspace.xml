@@ -5,63 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60f594b7-ed9f-43b8-91a1-b4f23770f6a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_17_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jimmoores_quandl_core_2_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_opencsv_opencsv_4_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_ws_rs_jakarta_ws_rs_api_2_1_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_beanshell_bsh_2_0b4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_jakarta_inject_2_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_locator_2_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_client_2_29_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_29_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_inject_jersey_hk2_2_29_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_22_0_CR2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20190722.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_6_8_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exception/StockExistenteException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Business/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Business/TradeEssApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/TradeEssApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Business/Trader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Business/Trader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Connect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUIAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUIAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUISaldo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUISaldo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUITrader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUITrader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Business/API.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Business/API.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Business/TradeEssApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Business/TradeEssApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Business/Trader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Business/Trader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Data/Connect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/Connect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Data/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUIAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUIAdmin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUISaldo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUISaldo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUITrader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/GUITrader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/Business/TradeEssAppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/Business/TradeEssAppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/Business/TraderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/Business/TraderTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled104.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -303,7 +253,9 @@
       <workItem from="1571762277896" duration="295000" />
       <workItem from="1571762579108" duration="9388000" />
       <workItem from="1571821829959" duration="1154000" />
-      <workItem from="1571830627805" duration="21437000" />
+      <workItem from="1571830627805" duration="21589000" />
+      <workItem from="1571913647277" duration="1520000" />
+      <workItem from="1571919653134" duration="1367000" />
     </task>
     <servers />
   </component>

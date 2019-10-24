@@ -62,7 +62,6 @@ public class MainMenu extends GUI {
     private static void tryLogIn(String username, String password)throws SQLException, Exception  {
         try {
             iniciarSessao(username, password);
-
             loggedIn();
         } catch (PasswordIncorretaException e) {
             System.out.println("Password Incorreta.");
@@ -113,6 +112,7 @@ public class MainMenu extends GUI {
         System.out.println("5 - Apagar Conta");
         System.out.println("6 - Terminar sessão");
         System.out.println("--------------------");
+        GUITrader.traderLoggedIn();
     }
 
     public static void adminLoggedIn() {

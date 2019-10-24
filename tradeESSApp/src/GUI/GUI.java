@@ -14,9 +14,6 @@ public class GUI {
     public static TradeEssApp tradeEssApp = new TradeEssApp();
 
     public static void main(String[] args) throws SQLException,Exception {
-        API api = new API(tradeEssApp);
-        //api.run();
-
         MainMenu.showMenu();
     }
 

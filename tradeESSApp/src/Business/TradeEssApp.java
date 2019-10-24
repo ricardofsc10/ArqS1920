@@ -26,6 +26,10 @@ public class TradeEssApp {
         this.userDAO = new UserDAO();
         this.stockDAO = new StockDAO();
         this.positionDAO = new PositionDAO();
+        //createStock("APPL");
+
+        //API api = new API(this);
+        //api.run();
     }
 
     /**
