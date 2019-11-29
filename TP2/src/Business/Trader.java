@@ -6,7 +6,6 @@ import Exceptions.UserAlreadyExistsException;
 import Exceptions.UtilizadorInexistenteException;
 import GUI.GUI;
 import GUI.Menu;
-import GUI.MenuUser;
 import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
 
@@ -19,16 +18,13 @@ public class Trader extends User implements Runnable, DataSubject {
 
     private static User atual;
     private static Data data;
-    private static Menu menu;
     private static Thread thread;
     private static Integer stop = 0;
 
     private static Map<String,MyObserver> observers;
-    private String mensagem;
     public static UserDAO userDAO;
     public static AssetDAO assets;
     public static CfdDAO cfds;
-    public static ConcurrentHashMap <Integer, Watchlist> watchlist = new ConcurrentHashMap <Integer, Watchlist> ();
     public static HashMap <Integer, String> not = new HashMap <Integer, String> ();
 
     public User getUser(){
@@ -54,7 +50,6 @@ public class Trader extends User implements Runnable, DataSubject {
             Stock st;
             Stock sl;
             Double value;
-            System.out.println("RUNNING");
 
             while(stop==0) {
 
@@ -68,16 +63,16 @@ public class Trader extends User implements Runnable, DataSubject {
 
                     if(c.getType().equals("BUY") && c.getActive().equals(true)) {
                         if(ask >= c.getUpperlimit() || ask <= c.getLowerlimit()) {
-                            auto_closeCfd(c, ask);
-                            observers.get(atual.getUsername()).update("CFD FECHADO");
-                            avisa("CFD FECHADO");
+                            autoCloseCfd(c, ask);
+                            observers.get(atual.getUsername()).update("CFD CLOSED");
+                            avisa("CFD CLOSED");
                         }
                     }
                     if(c.getType().equals("SELL") && c.getActive().equals(true)) {
                         if(bid >= c.getUpperlimit() || bid <= c.getLowerlimit()) {
-                            auto_closeCfd(c, bid);
-                            observers.get(atual.getEmail()).update("CFD FECHADO");
-                            avisa("CFD FECHADO");
+                            autoCloseCfd(c, bid);
+                            observers.get(atual.getEmail()).update("CFD CLOSED");
+                            avisa("CFD CLOSED");
                         }
                     }
                 }
@@ -100,7 +95,7 @@ public class Trader extends User implements Runnable, DataSubject {
                 }
             }
             try {
-                Thread.sleep(4000);
+                Thread.sleep(1000);
             }
             catch (InterruptedException e) {
                 e.printStackTrace();
@@ -147,21 +142,23 @@ public class Trader extends User implements Runnable, DataSubject {
         data.addUser(email, username, name, password, age, 0.0, plafond);
     }
 
-    public static void load_assets() throws IOException {
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("FB")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("AAPL")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("TSLA")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("DE")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("GOOG")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("ORCL")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("PFE")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("IBM")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("PBR")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("OI")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("GDDY")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("VZ")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("ATC.AS")));
-        assets.put(assets.size()+1, new Asset(YahooFinance.get("AIR.PA")));
+    public static void loadAssets() throws IOException {
+        if(assets.size() == 0){
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("FB")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("AAPL")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("TSLA")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("DE")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("GOOG")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("ORCL")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("PFE")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("IBM")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("PBR")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("OI")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("GDDY")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("VZ")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("ATC.AS")));
+            assets.put(assets.size()+1, new Asset(YahooFinance.get("AIR.PA")));
+        }
     }
 
 
@@ -178,15 +175,15 @@ public class Trader extends User implements Runnable, DataSubject {
 
         ArrayList <ArrayList<String>> list = new ArrayList<> ();
         ArrayList<String> header = new ArrayList<>();
-        header.add("NR DO CONTRATO");
-        header.add("UTILIZADOR");
+        header.add("CFD NR");
+        header.add("USER");
         header.add("ASSET");
-        header.add("TIPO");
-        header.add("UNIDADES");
-        header.add("PREÇO INICIAL [$]");
+        header.add("TYPE");
+        header.add("UNIT");
+        header.add("INITIAL VALUE [$]");
         header.add("TAKE PROFIT [$]");
         header.add("STOP LOSS [$]");
-        header.add("ESTADO");
+        header.add("STATUS");
         list.add(header);
 
         for(Integer id : cfds.keySet()) {
@@ -205,8 +202,8 @@ public class Trader extends User implements Runnable, DataSubject {
                 line.add(""+cur.getUpperlimit());
                 line.add(""+cur.getLowerlimit());
                 if(cur.getActive()) {
-                    line.add("ACTIVO");
-                } else line.add("FECHADO");
+                    line.add("ACTIVE");
+                } else line.add("CLOSED");
 
                 list.add(line);
             }
@@ -216,7 +213,7 @@ public class Trader extends User implements Runnable, DataSubject {
         tablecfd.print();
     }
 
-    public synchronized static void checkprofit() {
+    public synchronized static void checkProfit() {
 
         Double pf;
         String list;
@@ -231,7 +228,7 @@ public class Trader extends User implements Runnable, DataSubject {
         }
     }
 
-    public static synchronized void close_cfd() throws IOException{
+    public static synchronized void closeCfd() throws IOException{
         Integer nr;
         String username;
         String type;
@@ -292,7 +289,7 @@ public class Trader extends User implements Runnable, DataSubject {
         System.out.println(":))))): " + data.getUser(username).getProfit());
     }
 
-    public static synchronized void auto_closeCfd(Cfd c, Double value) throws IOException{
+    public static synchronized void autoCloseCfd(Cfd c, Double value) throws IOException{
         Integer nr;
         String username;
         Double balance;
@@ -328,49 +325,49 @@ public class Trader extends User implements Runnable, DataSubject {
         data.getUser(username).setProfit(profit);
     }
 
-    public static synchronized void create_cfd() throws IOException{
-        String cfd_username;
-        Integer cfd_asset;
-        String cfd_type;
-        Double cfd_upper;
-        Double cfd_lower;
-        Double cfd_start_value;
-        Double cfd_units;
+    public static synchronized void createCfd() throws IOException{
+        String cfdUsername;
+        Integer cfdAsset;
+        String cfdType;
+        Double cfdUpper;
+        Double cfdLower;
+        Double cfdStartValue;
+        Double cfdUnits;
         Asset asset;
 
         System.out.println("[START A NEW CFD]");
-        cfd_username = atual.getUsername();
+        cfdUsername = atual.getUsername();
 
         System.out.print("[INSERT THE ASSET CODE] ");
-        cfd_asset = GUI.readLineInt();
+        cfdAsset = GUI.readLineInt();
 
         System.out.print("[CHOOSE THE TYPE | SHORT OR BUY] ");
-        cfd_type = GUI.readLine();
+        cfdType = GUI.readLine();
 
         System.out.print("[AMOUNT OF UNITS] ");
-        cfd_units = GUI.readLineDouble();
+        cfdUnits = GUI.readLineDouble();
 
         System.out.print("[SET \"TAKE PROFIT\" $] ");
-        cfd_upper = GUI.readLineDouble();
+        cfdUpper = GUI.readLineDouble();
 
         System.out.print("[SET \"STOP LOSS\" $] ");
-        cfd_lower = GUI.readLineDouble();
+        cfdLower = GUI.readLineDouble();
 
-        if(cfd_type.equals("BUY")) {
-            cfd_start_value = assets.get(cfd_asset).getBid();
-            if(cfd_start_value == 0.0) cfd_start_value = assets.get(cfd_asset).getPrevious();
+        if(cfdType.equals("BUY")) {
+            cfdStartValue = assets.get(cfdAsset).getBid();
+            if(cfdStartValue == 0.0) cfdStartValue = assets.get(cfdAsset).getPrevious();
 
         } else {
-            cfd_start_value = assets.get(cfd_asset).getAsk();
-            if(cfd_start_value == 0.0) cfd_start_value = assets.get(cfd_asset).getPrevious();
+            cfdStartValue = assets.get(cfdAsset).getAsk();
+            if(cfdStartValue == 0.0) cfdStartValue = assets.get(cfdAsset).getPrevious();
         }
 
-        asset = data.getAsset(cfd_asset);
+        asset = data.getAsset(cfdAsset);
         Integer idAsset = asset.getId();
 
         Integer id = cfds.size()+1;
 
-        Cfd novo = new Cfd(idAsset, cfd_type, cfd_username, cfd_lower, cfd_upper, cfd_units, cfd_start_value, true);
+        Cfd novo = new Cfd(idAsset, cfdType, cfdUsername, cfdLower, cfdUpper, cfdUnits, cfdStartValue, true);
         cfds.put(id, novo);
         addObserver(atual.getUsername(), (MyObserver) atual);
 
@@ -395,20 +392,18 @@ public class Trader extends User implements Runnable, DataSubject {
         System.out.println("DATA: " + data.getWatchlist());
     }
 
-    public static void show_assets(){
+    public static void showAssets(){
         ArrayList <ArrayList<String>> list = new ArrayList<> ();
         ArrayList<String> header = new ArrayList<>();
         header.add("NR");
-        header.add("CÓDIGO");
+        header.add("CODE");
         header.add("NAME");
         header.add("ASK [$]");
         header.add("BID [$]");
-        header.add("PREÇO DE FECHO [$]");
+        header.add("CLOSED PRICE [$]");
         list.add(header);
         int i = 0;
         for(int cod: assets.keySet()) {
-
-            System.out.println("ESTOU AQUI");
 
             ArrayList<String> line = new ArrayList <>();
             line.add(Integer.toString(++i));
@@ -428,7 +423,7 @@ public class Trader extends User implements Runnable, DataSubject {
         t.print();
     }
 
-    public static void show_watchlist() throws IOException {
+    public static void showWatchlist() throws IOException {
         ConcurrentHashMap<Integer, Watchlist> userlist = new ConcurrentHashMap <Integer, Watchlist> ();
         Watchlist cur = new Watchlist();
 
@@ -459,12 +454,12 @@ public class Trader extends User implements Runnable, DataSubject {
         tablecfd.print();
     }
 
-    public static void show_notifications() {
+    public static void showNotifications() {
         ArrayList <ArrayList<String>> list = new ArrayList<> ();
         ArrayList<String> header = new ArrayList<>();
         not = data.getUser(atual.getUsername()).getNotifications();
-        header.add("NÚMERO");
-        header.add("MENSAGEM");
+        header.add("NR");
+        header.add("MESSAGE");
         list.add(header);
 
         if(not == null) System.out.println("Não há notificações!");

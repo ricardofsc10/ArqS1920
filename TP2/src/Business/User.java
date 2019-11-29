@@ -7,7 +7,6 @@ import Exceptions.UtilizadorInexistenteException;
 import GUI.MenuUser;
 
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.*;
 
 public class User implements Serializable, MyObserver, Comparable<User> {

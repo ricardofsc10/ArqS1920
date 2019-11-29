@@ -1,7 +1,6 @@
 package Data;
 
 import Business.Cfd;
-import Business.User;
 
 import java.sql.*;
 import java.util.*;
@@ -22,8 +21,6 @@ public class CfdDAO implements Map<Integer, Cfd> {
             preparedStatement.setBoolean(1, value.getActive());
 
             preparedStatement.executeUpdate();
-
-            System.out.println("ai mãe");
         }
         catch (SQLException e){
             e.getMessage();
@@ -181,8 +178,6 @@ public class CfdDAO implements Map<Integer, Cfd> {
             preparedStatement.setBoolean(9, value.getActive());
 
             preparedStatement.executeUpdate();
-
-            System.out.println("ai mãe");
         }
         catch (SQLException e){
             e.getMessage();

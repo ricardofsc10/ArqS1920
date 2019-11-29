@@ -1,7 +1,5 @@
 package GUI;
 
-import Business.Trader;
-
 import java.io.IOException;
 
 public class MenuUser extends GUI {
@@ -34,9 +32,9 @@ public class MenuUser extends GUI {
                 // CHECK ASSET LIST
                 System.out.println("REFRESHING ASSET RATES\n");
                 try{
-                    trader.load_assets();
+                    trader.loadAssets();
                 } catch (IOException e) {}
-                trader.show_assets();
+                trader.showAssets();
                 continuar();
                 loggedInGUI();
                 break;
@@ -50,23 +48,23 @@ public class MenuUser extends GUI {
             }
             case "3": {
                 //CHECK PROFIT
-                trader.checkprofit();
+                trader.checkProfit();
                 continuar();
                 loggedInGUI();
                 break;
             }
             case "4": {
                 //CLOSE CFD
-                trader.close_cfd();
+                trader.closeCfd();
                 continuar();
                 loggedInGUI();
                 break;
             }
             case "5": {
                 //OPEN CFD
-                trader.show_assets();
+                trader.showAssets();
                 try{
-                    trader.create_cfd();
+                    trader.createCfd();
                 }
                 catch (IOException e){
                     e.printStackTrace();
@@ -77,7 +75,7 @@ public class MenuUser extends GUI {
             }
             case "6": {
                 //ADD ASSET TO WATCHLIST -> MALI
-                trader.show_assets();
+                trader.showAssets();
                 try{
                     trader.addtoWatchlist();
                 }
@@ -91,7 +89,7 @@ public class MenuUser extends GUI {
             case "7": {
                 //SHOW WATCHLIST
                 try {
-                    trader.show_watchlist();
+                    trader.showWatchlist();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -101,7 +99,7 @@ public class MenuUser extends GUI {
             }
             case "8": {
                 //SHOW NOTIFICATIONS
-                trader.show_notifications();
+                trader.showNotifications();
                 continuar();
                 loggedInGUI();
                 break;

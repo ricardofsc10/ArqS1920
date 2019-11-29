@@ -51,8 +51,6 @@ public class UserDAO implements Map<Integer, User> {
             preparedStatement.setDouble(1, value.getProfit());
 
             preparedStatement.executeUpdate();
-
-            System.out.println("ai mãe");
         }
         catch (SQLException e){
             e.getMessage();
@@ -197,8 +195,6 @@ public class UserDAO implements Map<Integer, User> {
             preparedStatement.setString(1, Integer.toString((Integer) key));
             preparedStatement.executeUpdate();
 
-            System.out.println("base de dados :(((");
-
             preparedStatement = connection.prepareStatement("INSERT INTO user(id, email, username, name, password, idade, profit, plafond) VALUES (?,?,?,?,?,?,?,?);");
             preparedStatement.setString(1, Integer.toString(key));
             preparedStatement.setString(2, value.getEmail());
@@ -210,8 +206,6 @@ public class UserDAO implements Map<Integer, User> {
             preparedStatement.setDouble(8, value.getPlafond());
 
             preparedStatement.executeUpdate();
-
-            System.out.println("ai mãe");
         }
         catch (SQLException e){
             e.getMessage();

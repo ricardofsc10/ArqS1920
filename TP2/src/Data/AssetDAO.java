@@ -1,7 +1,6 @@
 package Data;
 
 import Business.Asset;
-import Business.User;
 
 import java.sql.*;
 import java.util.*;
@@ -145,8 +144,6 @@ public class AssetDAO implements Map<Integer, Asset> {
             preparedStatement.setDouble(6, value.getPrevious());
 
             preparedStatement.executeUpdate();
-
-            System.out.println("ai mãe");
         }
         catch (SQLException e){
             e.getMessage();

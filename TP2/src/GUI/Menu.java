@@ -1,16 +1,10 @@
 package GUI;
 
-import Business.Trader;
-import Business.User;
-import Data.UserDAO;
 import Exceptions.PasswordIncorretaException;
 import Exceptions.UserAlreadyExistsException;
 import Exceptions.UtilizadorInexistenteException;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Scanner;
-import Data.*;
 
 public class Menu extends GUI {
 
