@@ -81,16 +81,9 @@ public class Trader extends User implements Runnable, DataSubject {
 
                     sl = YahooFinance.get(w.getCode());
                     value = sl.getQuote().getPrice().doubleValue();
-                    if(w.getUpordown().equals(1)) {
-                        //UPPER THAN
-                        String isup = "UP";
-                        if(value >= w.getLimit()) avisa(isup);
-                    }
-                    if(w.getUpordown().equals(0)) {
-                        //LOWER THAN
-                        String isdown = "DOWN";
-                        if(value < w.getLimit()) avisa(isdown);
-                    }
+                    if(value == (data.getUser(w.getUser()).getCfdDAO().get(w.getCode()).getStart_value())* 1.05) avisa("SUBIU 5%");
+                    if(value*1.05 == (data.getUser(w.getUser()).getCfdDAO().get(w.getCode()).getStart_value())) avisa("DESCEU 5%");
+
 
                 }
             }
@@ -381,13 +374,8 @@ public class Trader extends User implements Runnable, DataSubject {
         System.out.println("INSERT ASSET CODE TO WATCH");
         String code = GUI.readLine();
 
-        System.out.println("INSERT LIMIT WARNING");
-        Double limit = GUI.readLineDouble();
 
-        System.out.println("UP OR DOWN LIMIT? 1 - UP | 0 - DOWN");
-        Integer upOrDown = GUI.readLineInt();
-
-        Watchlist watch = new Watchlist(code, user, limit, upOrDown);
+        Watchlist watch = new Watchlist(code, user);
         data.addtoWatchlist(watch);
         System.out.println("DATA: " + data.getWatchlist());
     }
@@ -443,9 +431,9 @@ public class Trader extends User implements Runnable, DataSubject {
             cur = userlist.get(id);
             line.add(""+cur.getCode());
             line.add(""+cur.getUser());
-            line.add(""+cur.getLimit());
+
             line.add(""+YahooFinance.get(cur.getCode()).getQuote().getPreviousClose());
-            line.add(""+cur.getUpordown());
+
 
             list.add(line);
         }
