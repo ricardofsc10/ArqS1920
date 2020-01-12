@@ -1,0 +1,67 @@
+
+KServidor.ESS_ltd#verficaUtilizador(Ljava/lang/String;)LServidor/Utilizador;J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java9 9(%"6*Ï
+2J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java; ;(v
+t
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java; ;(
+uServidor.Utilizador"__id*
+""*
+4
+1*å
+3J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java= =(Ž
+‹
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java= =(
+userServidor.Utilizador"__id*
+
+uServidor.Utilizador*
+1*‚
+4J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java< <(ÇÄ
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java< <(
+%2java.lang.String"3Servidor.Utilizador#getUsername()Ljava/lang/String;*
+
+uServidor.Utilizador2getUsername()ÞÛ
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java< <(#
+%3boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+%2java.lang.String*
+
+nomejava.lang.String2equals(Ljava/lang/Object;)*
+2
+3*µ
+5J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java; ;(—
+”
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java; ;('
+%0DAOS.UtilizadorDAO"__id*&*$
+Servidor.ESS_ltd"
+utilizadoresÄÁ
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java; ;(0
+%1java.util.Collection"1DAOS.UtilizadorDAO#values()Ljava/util/Collection;*
+
+%0DAOS.UtilizadorDAO2values()*
+2*Ï
+6J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java: :(y
+w
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java: :(
+userServidor.Utilizador"__id*
+""*
+5*¼
+1J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaB	 B("k
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaB B(
+
+userServidor.Utilizador:
+nomejava.lang.StringB
+Servidor.ESS_ltd

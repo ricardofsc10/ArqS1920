@@ -1,0 +1,8 @@
+
+Rsquid:UselessImportCheck".Remove this unused import 'java.util.Objects'.(¼¸õ›
+^squid:S00107"AConstructor has 9 parameters, which is greater than 7 authorized.(±üª¨ûÿÿÿÿ
+msquid:S1206—"PThis class overrides "equals()" and should therefore also override "hashCode()".(İ¢êÍıÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Í†ü
+_squid:S1182ƒ"HUse super.clone() to create and seed the cloned instance to be returned.(š¿ÿ`
+@squid:S1148´"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+jsquid:S2975ƒ"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(š¿ÿ`

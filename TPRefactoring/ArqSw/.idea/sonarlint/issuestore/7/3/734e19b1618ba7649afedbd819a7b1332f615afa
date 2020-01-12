@@ -1,0 +1,7 @@
+
+Zsquid:S11552">Use isEmpty() to check whether the collection is empty or not.(›ö œúÿÿÿÿ
+bsquid:CommentedOutCodeLineC"<This block of commented-out lines of code should be removed.(øì’“
+csquid:S39732"GUse indentation to denote the code conditionally executed by this "if".(›ö œúÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Í†ü
+Qsquid:UselessImportCheck"-Remove this unused import 'java.time.Period'.(šÉ¢½
+Psquid:UselessImportCheck",Remove this unused import 'java.net.Socket'.(­‡àú

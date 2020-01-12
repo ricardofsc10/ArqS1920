@@ -1,0 +1,34 @@
+
+.Servidor.ESS_ltd#saldo(LServidor/Utilizador;)FJ
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaE E("1*™
+1J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaF	 F(ó
+î
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaF	 F(
+%0DAOS.UtilizadorDAO"__id*&*$
+Servidor.ESS_ltd"
+utilizadoresùö
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaF F((	
+%1int"Servidor.Utilizador#getId()I*
+
+uServidor.Utilizador2getId()ù
+ö
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaF	 F()
+%2Servidor.Utilizador"__mapGet*
+
+%0DAOS.UtilizadorDAO*
+	
+%1int®•
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaF	 F(5
+%3float" Servidor.Utilizador#getPlafom()F*
+
+%2Servidor.Utilizador2getPlafom()"T
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaF F(6
+"":
+uServidor.UtilizadorB
+Servidor.ESS_ltd

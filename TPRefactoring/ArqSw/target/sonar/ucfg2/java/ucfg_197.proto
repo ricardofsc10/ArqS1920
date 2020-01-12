@@ -1,0 +1,86 @@
+
+5Servidor.Utilizador#getPedidoAtual()LServidor/Pedido;M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java8 8("4*Ø
+2M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java< <(™
+–
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java< <(
+%9Servidor.Pedido"__id*(*&
+Servidor.Utilizador"
+pedidoAtual"h
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java< <(
+
+%9Servidor.Pedido*Ä
+
+3M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java: :(™
+–
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java: :(
+%2Servidor.Pedido"__id*(*&
+Servidor.Utilizador"
+pedidoAtual
+š
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java:" :(2
+%3java.util.List"__id*-*+
+Servidor.Utilizador"
+pedidosPendentes
+š
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java:" :(O
+%4Servidor.Pedido$Memento"
+__arrayGet*
+
+%3java.util.List*
+""‡„
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java: :(P
+
+%5void">Servidor.Pedido#restoreFromMemento(LServidor/Pedido$Memento;)V*
+
+%2Servidor.Pedido*
+
+%4Servidor.Pedido$Memento2-restoreFromMemento(LServidor/Pedido$Memento;)™
+–
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java; ;(
+%6Servidor.Pedido"__id*(*&
+Servidor.Utilizador"
+pedidoAtual½º
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java; ;(
+%7Servidor.Estado",Servidor.Pedido#getEstado()LServidor/Estado;*
+
+%6Servidor.Pedido2getEstado()¥¢
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java; ;(+
+%8boolean"Servidor.Estado#getEstado()Z*
+
+%7Servidor.Estado2getEstado()*
+2
+1*œ
+4M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java9 9(
+š
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java9 9(
+%0java.util.List"__id*-*+
+Servidor.Utilizador"
+pedidosPendentesŸœ
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java9 9( 
+%1boolean"java.util.List#isEmpty()Z*
+
+%0java.util.List2	isEmpty()*
+3
+1*«
+1M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java>
+ >("W
+M
+CC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Utilizador.java> >(
+""B
+Servidor.Utilizador

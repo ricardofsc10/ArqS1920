@@ -1,0 +1,10 @@
+
+Gsquid:S1905t"+Remove this unnecessary cast to "Observer".(°Úî°şÿÿÿÿ
+Xsquid:UselessImportCheck"/Remove this unused import 'yahoofinance.Stock'.(Î—Èûÿÿÿÿ
+lsquid:S1206W"PThis class overrides "equals()" and should therefore also override "hashCode()".(İ¢êÍıÿÿÿÿ
+Ysquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ
+_squid:S1182M"HUse super.clone() to create and seed the cloned instance to be returned.(ÈÖ§“
+jsquid:S2975M"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ÈÖ§“
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Í†ü
+_squid:UselessImportCheck"6Remove this unused import 'yahoofinance.YahooFinance'.(€ÇÆ¾ÿÿÿÿÿ
+Usquid:UselessImportCheck"1Remove this unused import 'java.math.BigDecimal'.(êêŠ

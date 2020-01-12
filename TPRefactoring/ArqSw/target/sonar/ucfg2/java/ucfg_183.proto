@@ -1,0 +1,43 @@
+
+PServidor.ThreadCliente#saldo_utilizador(LServidor/Utilizador;)Ljava/lang/String;R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaä ä(""1*—
+1R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaã ã(ö
+ó
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaã ã(
+%0Servidor.ESS_ltd"__id*#*!
+Servidor.ThreadCliente"
+essËÂ
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaã ã(!
+%1float".Servidor.ESS_ltd#saldo(LServidor/Utilizador;)F*
+
+%0Servidor.ESS_ltd*
+
+uServidor.Utilizador2saldo(LServidor/Utilizador;)ª
+∏
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaå å(-
+%2java.lang.String"-java.lang.Float#toString(F)Ljava/lang/String;*"
+java.lang.Float*
+""ì
+ê
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaå å(.
+plafomjava.lang.String"__id*
+
+%2java.lang.String´
+®
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaç ç((
+%3java.lang.String"__concat*
+O seu saldo : *
+
+plafomjava.lang.String"n
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaç ç()
+
+%3java.lang.String:
+uServidor.UtilizadorB
+Servidor.ThreadCliente

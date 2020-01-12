@@ -1,0 +1,10 @@
+
+Gsquid:S1148×"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¡»´ù-
+asquid:S1126"BReplace this if-then-else statement by a single method invocation.(ĞéÙ¨8¡»´ù-
+Xsquid:S1141?"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ã³´ù-
+¥squid:S1186«"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Õà·ˆÿÿÿÿÿ8ÄÕ´ù-
+esquid:S1192i"HDefine a constant instead of duplicating this literal "idAtivo" 4 times.(¹ô—48ÄÕ´ù-
+}squid:S2293¼"YReplace the type specification in this constructor call with the diamond operator ("<>").(±ÄÆ–üÿÿÿÿ8÷ûµ´ù-
+Gsquid:S1148Ò"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8û°­´ù-
+fsquid:S1126ˆ"BReplace this if-then-else statement by a single method invocation.(íÆƒüÿÿÿÿ8û°­´ù-
+¥squid:S1186°"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ş‚ÄÔıÿÿÿÿ8ÄÕ´ù-

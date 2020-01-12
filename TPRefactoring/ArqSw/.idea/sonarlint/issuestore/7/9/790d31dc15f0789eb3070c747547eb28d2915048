@@ -1,0 +1,5 @@
+
+jsquid:S2975ƒ"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(š¿ÿ`
+^squid:S00107"AConstructor has 9 parameters, which is greater than 7 authorized.(±üª¨ûÿÿÿÿ
+msquid:S1206—"PThis class overrides "equals()" and should therefore also override "hashCode()".(Ý¢êÍýÿÿÿÿ
+_squid:S1182ƒ"HUse super.clone() to create and seed the cloned instance to be returned.(š¿ÿ`

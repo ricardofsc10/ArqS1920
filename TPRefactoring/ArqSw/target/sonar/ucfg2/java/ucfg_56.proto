@@ -1,0 +1,35 @@
+
+FServidor.ESS_ltd#veNotificacoes(LServidor/Utilizador;)Ljava/util/List;L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.java÷ ÷(#"1*ñ
+1L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaø ø("™
+–
+L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaø ø(/
+%0DAOS.UtilizadorDAO"__id*&*$
+Servidor.ESS_ltd"
+utilizadoresŸœ
+L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaø@ ø(I	
+%1int"Servidor.Utilizador#getId()I*
+
+uServidor.Utilizador2getId()ÛØ
+L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaø ø(J
+%2java.util.List"5DAOS.UtilizadorDAO#getNotificacoes(I)Ljava/util/List;*
+
+%0DAOS.UtilizadorDAO*
+	
+%1int2getNotificacoes(I)
+Œ
+L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaø ø(K
+notificacoesjava.util.List"__id*
+
+%2java.util.List"p
+L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaù ù( 
+
+notificacoesjava.util.List:
+uServidor.UtilizadorB
+Servidor.ESS_ltd

@@ -1,0 +1,23 @@
+
+Tsquid:S1143©"5Remove this return statement from this finally block.(÷ÊÚø8îªÈ·ù-
+osquid:S00117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©‹üÿÿÿÿ
+gsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒñÁÍ
+Ysquid:S1143Ş"5Remove this return statement from this finally block.( À¯üÿÿÿÿ8îªÈ·ù-
+Tsquid:S1143Â"5Remove this return statement from this finally block.(à¸ˆã8îªÈ·ù-
+ksquid:S00100v"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İäˆüüÿÿÿÿ
+Tsquid:S1143À"5Remove this return statement from this finally block.(÷ÊÚø8îªÈ·ù-
+Tsquid:S1143…"5Remove this return statement from this finally block.(²Û¥â8îªÈ·ù-
+Ssquid:S1143q"5Remove this return statement from this finally block.(†¤Òô8îªÈ·ù-
+qsquid:S00117×"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãóá¿8îªÈ·ù-
+Ysquid:S1143ƒ"5Remove this return statement from this finally block.(¬µíüÿÿÿÿ8îªÈ·ù-
+Tsquid:S1143«"5Remove this return statement from this finally block.(à¸ˆã8îªÈ·ù-
+fsquid:S00100d"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÍ¢è
+Tsquid:S1143Ü"5Remove this return statement from this finally block.(Ô†ÇØ8îªÈ·ù-
+Ysquid:S1143’"5Remove this return statement from this finally block.( À¯üÿÿÿÿ8îªÈ·ù-
+osquid:S00117´"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©‹üÿÿÿÿ
+Xsquid:S1143o"5Remove this return statement from this finally block.(—ß·°ùÿÿÿÿ8îªÈ·ù-
+osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©‹üÿÿÿÿ
+isquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(©İêÒ
+`squid:S1192"IDefine a constant instead of duplicating this literal "TERMINAR" 3 times.(Şƒš
+Ysquid:S1143"5Remove this return statement from this finally block.(¶Ã¶øÿÿÿÿ8îªÈ·ù-
+lsquid:S00100Š"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥É’ûÿÿÿÿ

@@ -1,0 +1,25 @@
+
+=Servidor.ESS_ltd#getAtivo(Ljava/lang/String;)LServidor/Ativo;L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaè è("1*ö
+1L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaé é(Ž
+‹
+L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaé é(
+%0DAOS.AtivoDAO"__id* *
+Servidor.ESS_ltd"
+ativos©¦
+L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaé é(/
+%1Servidor.Ativo"GDAOS.AtivoDAO#get(Ljava/lang/Object;Ljava/lang/Object;)LServidor/Ativo;*
+
+%0DAOS.AtivoDAO*
+
+	descricaojava.lang.String*
+Servidor.ESS_ltd2)get(Ljava/lang/Object;Ljava/lang/Object;)"f
+L
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ESS_ltd.javaé	 é(0
+
+%1Servidor.Ativo:
+	descricaojava.lang.StringB
+Servidor.ESS_ltd

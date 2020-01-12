@@ -1,0 +1,50 @@
+
+HServidor.ThreadCliente#seguirAtivo(Ljava/lang/String;)Ljava/lang/String;R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaä ä("6*Ã
+2R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaí í(2"s
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaí í(3
+Ativo seguido com sucesso*û
+5R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaç ç(5ö
+ó
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaé é(
+%1Servidor.ESS_ltd"__id*#*!
+Servidor.ThreadCliente"
+essû
+õ
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaé é( 
+%2Servidor.Utilizador"__id*$*"
+Servidor.ThreadCliente"
+user˛˚
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaé é(*
+
+%3void"5Servidor.ESS_ltd#seguirAtivo(LServidor/Utilizador;I)V*
+
+%1Servidor.ESS_ltd*
+
+%2Servidor.Utilizador*
+""2#seguirAtivo(LServidor/Utilizador;I)*
+2
+1*®
+6R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaç ç("…
+∆
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaç ç(4	
+%0int"/java.lang.Integer#parseInt(Ljava/lang/String;)I*"
+java.lang.Integer*
+
+idAtivojava.lang.String*
+5*ø
+1R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaî î(%"f
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaî î(&
+Id invalido :
+idAtivojava.lang.StringB
+Servidor.ThreadCliente

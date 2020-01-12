@@ -1,0 +1,17 @@
+
+fsquid:S20957"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Åôß‚
+fsquid:S2095;"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¬Æñ
+squid:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ş‚ÄÔıÿÿÿÿ
+Bsquid:S1168d"+Return an empty collection instead of null.(¥¹ï
+^squid:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(Ì‚À°
+^squid:S2095m"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(¿æ®
+squid:S1186Y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(º“Òéùÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëòÉÔ
+Csquid:S1264n",Replace this "for" loop with a "while" loop.(”æê
+^squid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(¿æ®
+O
+squid:S106D"9Replace this use of System.out or System.err by a logger.(çıàà
+Csquid:S1168"+Return an empty collection instead of null.(¥¹ï
+^squid:S2095l"GUse try-with-resources or close this "Statement" in a "finally" clause.(Ì‚À°
+O
+squid:S106L"9Replace this use of System.out or System.err by a logger.(çıàà

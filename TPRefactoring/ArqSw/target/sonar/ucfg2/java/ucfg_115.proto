@@ -1,0 +1,99 @@
+
+-Servidor.Registo#toString()Ljava/lang/String;J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java= =("1*…
+1J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ >(,£
+ 
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ ?(
+%0java.lang.String"__concat*$"
+ *********************************
+
+\n id=“
+
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ ?(
+%1java.lang.String"__concat*
+
+%0java.lang.String*
+""¡
+ž
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ @(
+%2java.lang.String"__concat*
+
+%1java.lang.String*
+\n idUtilizador=“
+
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ @(%
+%3java.lang.String"__concat*
+
+%2java.lang.String*
+""œ
+™
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ A(
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+\n idAtivo=“
+
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ A(
+%5java.lang.String"__concat*
+
+%4java.lang.String*
+""š
+—
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ B(
+%6java.lang.String"__concat*
+
+%5java.lang.String*
+	\n lucro=“
+
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ B(
+%7java.lang.String"__concat*
+
+%6java.lang.String*
+""Ÿ
+œ
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ C(
+%8java.lang.String"__concat*
+
+%7java.lang.String*
+\n quantidade=“
+
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ C(!
+%9java.lang.String"__concat*
+
+%8java.lang.String*
+""´
+±
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java>
+ D((
+%10java.lang.String"__concat*
+
+%9java.lang.String*&$
+"\n********************************"g
+J
+@C:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Registo.java> D()
+
+%10java.lang.StringB
+Servidor.Registo

@@ -1,0 +1,83 @@
+
+7Servidor.ThreadCliente#lista_Ativos()Ljava/lang/String;R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaè è("5*⁄
+2R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaì ì(y
+w
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaì ì(
+aServidor.Ativo"__id*
+""*
+3
+1*Ä
+3R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaî î(óî
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaî î(
+%5java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/Object;)Ljava/lang/StringBuilder;*
+
+sbjava.lang.StringBuilder*
+
+aServidor.Ativo2append(Ljava/lang/Object;)áÑ
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaï ï(
+%6java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
+
+sbjava.lang.StringBuilder*
+ 2append(Ljava/lang/String;)*
+2*ˆ
+
+5R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaê ê( ö
+ó
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaê ê( 
+%0Servidor.ESS_ltd"__id*#*!
+Servidor.ThreadCliente"
+ess»≈
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaê ê(/
+%1java.util.List"/Servidor.ESS_ltd#listarAtivos()Ljava/util/List;*
+
+%0Servidor.ESS_ltd2listarAtivos()è
+å
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaê ê(0
+ativosjava.util.List"__id*
+
+%1java.util.Listèå
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaë ë(,
+%2java.lang.StringBuilder"java.lang.StringBuilder°
+û
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaë ë(.
+%3"!java.lang.StringBuilder#<init>()V*
+
+%2java.lang.StringBuilderù
+ö
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaë ë(/
+sbjava.lang.StringBuilder"__id*
+
+%2java.lang.StringBuilder«ƒ
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaí í(T
+%4java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
+
+sbjava.lang.StringBuilder*EC
+A  Idenfica√ß√£o  | Nome  | preco de compra  | preco de um venda\n2append(Ljava/lang/String;)*
+2*ú
+1R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaó ó(“œ
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaó ó(
+%7java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;*
+
+sbjava.lang.StringBuilder2
+toString()"n
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaó ó(
+
+%7java.lang.StringB
+Servidor.ThreadCliente

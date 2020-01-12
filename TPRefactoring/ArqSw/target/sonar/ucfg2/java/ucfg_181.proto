@@ -1,0 +1,45 @@
+
+]Servidor.ThreadCliente#iniciar_Sessao(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javad d( "6*¶
+2P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javao o( "_
+P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javao o(!	
+SUCESSO*ü
+4P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javag g(6œ
+™
+P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javag g(6"
+Servidor.ThreadCliente"
+user"__id*
+
+%1Servidor.Utilizador*
+2
+1*Ò
+6P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javag g(˜
+•
+P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javag g(
+%0Servidor.ESS_ltd"__id*#*!
+Servidor.ThreadCliente"
+essÚ×
+P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javag g(6
+%1Servidor.Utilizador"YServidor.ESS_ltd#iniciarSessao(Ljava/lang/String;Ljava/lang/String;)LServidor/Utilizador;*
+
+%0Servidor.ESS_ltd*
+
+usernamejava.lang.String*
+
+passwordjava.lang.String23iniciarSessao(Ljava/lang/String;Ljava/lang/String;)*
+4*Â
+1P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaq q(+"k
+P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaq q(,
+Login nÃ£o efetuado:
+usernamejava.lang.String:
+passwordjava.lang.StringB
+Servidor.ThreadCliente

@@ -1,0 +1,7 @@
+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+isquid:UselessImportCheck"ERemove this unused import 'java.util.concurrent.locks.ReentrantLock'.(òªø
+Vsquid:S1118	":Add a private constructor to hide the implicit public one.(Õ“ùÿÿÿÿ
+?squid:S1148!"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëòÉÔ

@@ -1,0 +1,22 @@
+
+Wsquid:S1854†":Remove this useless assignment to local variable "sucess".(ñéÑëþÿÿÿÿ
+|squid:S1488ø"dImmediately return this expression instead of assigning it to the temporary variable "notificacoes".(•ïô«
+Ssquid:S18543"<Remove this useless assignment to local variable "mementos".(¢„Ãø
+osquid:S00117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ížà’üÿÿÿÿ
+jsquid:S00117¯"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åÃ¾
+osquid:S00117°"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œõÚØýÿÿÿÿ
+osquid:S00117¿"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï©¹—ûÿÿÿÿ
+osquid:S00117À"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¼ îýÿÿÿÿ
+osquid:S00117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ížà’üÿÿÿÿ
+Osquid:S2589"7Remove this expression which always evaluates to "true"(˜œù‡
+nsquid:S00117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²Ó’Æýÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Í†ü
+`squid:S3973("IUse indentation to denote the code conditionally executed by this "else".(ÔÍØ
+asquid:HiddenFieldCheckJ":Rename "ativos" which hides the field declared at line 16.(×²„œüÿÿÿÿ
+dsquid:HiddenFieldCheck{"=Rename "contratos" which hides the field declared at line 17.(ˆ«û¶øÿÿÿÿ
+¬%squid:RedundantThrowsDeclarationCheck”"zRemove the declaration of thrown exception 'java.net.SocketTimeoutException' which is a subclass of 'java.io.IOException'.(‚šˆŒ
+@squid:S1659•"#Declare "venda" on a separate line.(òöõæúÿÿÿÿ
+Dsquid:S14813"-Remove this unused "mementos" local variable.(¢„Ãø
+_squid:HiddenFieldCheckË"<Rename "registos" which hides the field declared at line 18.(žÇÅ„
+nsquid:S00117n"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²Ó’Æýÿÿÿÿ
+jsquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(’âÉÄûÿÿÿÿ

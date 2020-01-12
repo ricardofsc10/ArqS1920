@@ -1,0 +1,48 @@
+
+tServidor.ThreadCliente#registar_utilizador(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javav v(%"7*Ó
+2R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaƒ ƒ(9"z
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaƒ ƒ(:$"
+ UTILIZADOR REGISTADO COM SUCESSO*Æ
+6P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javay y(1˜
+•
+P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaz z(
+%1Servidor.ESS_ltd"__id*#*!
+Servidor.ThreadCliente"
+essËÈ
+P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaz z(<
+
+%2void"KServidor.ESS_ltd#registarUtilizador(Ljava/lang/String;Ljava/lang/String;I)V*
+
+%1Servidor.ESS_ltd*
+
+usernamejava.lang.String*
+
+passwordjava.lang.String*
+""29registarUtilizador(Ljava/lang/String;Ljava/lang/String;I)*
+2
+1*¢
+7P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javay y( Å
+Â
+P
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javay y(0	
+%0int"/java.lang.Integer#parseInt(Ljava/lang/String;)I*"
+java.lang.Integer*
+
+saldojava.lang.String*
+6*Í
+1R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.java… …(3"t
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.java… …(4
+Username ou saldo invalido:
+usernamejava.lang.String:
+passwordjava.lang.String:
+saldojava.lang.StringB
+Servidor.ThreadCliente

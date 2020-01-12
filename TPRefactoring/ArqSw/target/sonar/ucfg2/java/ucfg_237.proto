@@ -1,0 +1,225 @@
+
+-Servidor.Contrato#equals(Ljava/lang/Object;)ZM
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaó ó("paramAnnotations*÷
+14M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaù ù(≠™
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaù ù(	
+%5int"$Servidor.Contrato#getIdUtilizador()I*
+Servidor.Contrato2getIdUtilizador()∑¥
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaù ù(3	
+%6int"$Servidor.Contrato#getIdUtilizador()I*
+
+contratoServidor.Contrato2getIdUtilizador()*
+2
+4
+6
+8
+10
+12
+1*∆
+16M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaú ú(£†
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaú ú(	
+%3int"Servidor.Contrato#getIdAtivo()I*
+Servidor.Contrato2getIdAtivo()≠™
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaú ú()	
+%4int"Servidor.Contrato#getIdAtivo()I*
+
+contratoServidor.Contrato2getIdAtivo()*
+2
+14
+4
+6
+8
+10
+12
+1*…
+17M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaö! ö("ê
+ç
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaö ö(#
+contratoServidor.Contrato"__id*
+
+ojava.lang.Objectôñ
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaõ	 õ(	
+%1int"Servidor.Contrato#getId()I*
+Servidor.Contrato2getId()£†
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaõ õ($	
+%2int"Servidor.Contrato#getId()I*
+
+contratoServidor.Contrato2getId()*
+2
+14
+4
+16
+6
+8
+10
+12
+1*¨
+18M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaô' ô(,"W
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaô  ô(-
+""*á
+paramAnnotationsM
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaó ó( ï
+í
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javañ ñ(
+
+%0"
+__annotate*
+java.lang.Override*
+
+ojava.lang.Object~
+|
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaó ó(
+ojava.lang.Object"__annotation*
+
+%0*
+17
+18
+20*´
+1M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaõ £(,"W
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaõ £(,
+""*ª
+2M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java£ £(™ß
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java£ £(
+%20boolean" Servidor.Contrato#isEncerrado()Z*
+Servidor.Contrato2isEncerrado()¥±
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java£ £(+
+%21boolean" Servidor.Contrato#isEncerrado()Z*
+
+contratoServidor.Contrato2isEncerrado()*
+1*≤
+4M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java¢ ¢(§°
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java¢ ¢(
+%18boolean"Servidor.Contrato#isCompra()Z*
+Servidor.Contrato2
+isCompra()Æ´
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java¢ ¢(%
+%19boolean"Servidor.Contrato#isCompra()Z*
+
+contratoServidor.Contrato2
+isCompra()*
+2
+1*¡
+6M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java° °(™ß
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java° °(
+
+%16int""Servidor.Contrato#getQuantidade()I*
+Servidor.Contrato2getQuantidade()¥±
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java° °(/
+
+%17int""Servidor.Contrato#getQuantidade()I*
+
+contratoServidor.Contrato2getQuantidade()*	
+2
+4
+1*Ù
+8M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java† †(	≤Ø
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java† †((
+%13float" Servidor.Contrato#getStopLoss()F*
+
+contratoServidor.Contrato2getStopLoss()®•
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java†* †(7
+%14float" Servidor.Contrato#getStopLoss()F*
+Servidor.Contrato2getStopLoss()±
+Æ
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.java† †(8
+
+%15int"java.lang.Float#compare(FF)I*"
+java.lang.Float*
+
+%13float*
+
+%14float*
+2
+4
+6
+1*¨
+20M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaò ò("W
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaò ò(
+""*Ä
+10M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaü ü(	∂≥
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaü ü(*
+%10float""Servidor.Contrato#getTakeProfit()F*
+
+contratoServidor.Contrato2getTakeProfit()¨©
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaü, ü(;
+%11float""Servidor.Contrato#getTakeProfit()F*
+Servidor.Contrato2getTakeProfit()±
+Æ
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaü ü(<
+
+%12int"java.lang.Float#compare(FF)I*"
+java.lang.Float*
+
+%10float*
+
+%11float*
+2
+4
+6
+8
+1*Î
+12M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaû û(	´®
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaû û(%
+%7float"Servidor.Contrato#getPreco()F*
+
+contratoServidor.Contrato2
+getPreco()°û
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaû' û(1
+%8float"Servidor.Contrato#getPreco()F*
+Servidor.Contrato2
+getPreco()Æ
+´
+M
+AC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Contrato.javaû û(2	
+%9int"java.lang.Float#compare(FF)I*"
+java.lang.Float*
+
+%7float*
+
+%8float*
+2
+4
+6
+8
+10
+1:
+ojava.lang.ObjectB
+Servidor.Contrato

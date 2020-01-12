@@ -1,0 +1,37 @@
+
+Rsquid:S1143”"5Remove this return statement from this finally block.( À¯üÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Í†ü
+?squid:S1148k"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Zsquid:S1155"">Use isEmpty() to check whether the collection is empty or not.(ÑŠííúÿÿÿÿ
+osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©‹üÿÿÿÿ
+Psquid:UselessImportCheck",Remove this unused import 'java.util.Queue'.(Äá™ô
+isquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(©İêÒ
+Ysquid:UselessImportCheck"0Remove this unused import 'java.nio.ByteBuffer'.(¿¢×±úÿÿÿÿ
+Msquid:S1143«"5Remove this return statement from this finally block.(à¸ˆã
+Msquid:S1143Ü"5Remove this return statement from this finally block.(Ô†ÇØ
+hsquid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(‹õ¹ıÿÿÿÿ
+osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©‹üÿÿÿÿ
+fsquid:S00100d"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÍ¢è
+Rsquid:S1143ƒ"5Remove this return statement from this finally block.(¬µíüÿÿÿÿ
+Rsquid:S1143’"5Remove this return statement from this finally block.(¶Ã¶øÿÿÿÿ
+ksquid:S00100v"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×›†îûÿÿÿÿ
+Msquid:S1143Â"5Remove this return statement from this finally block.(à¸ˆã
+ %squid:RedundantThrowsDeclarationCheckv"jRemove the declaration of thrown exception 'java.lang.NumberFormatException' which is a runtime exception.(×›†îûÿÿÿÿ
+Lsquid:S1143q"5Remove this return statement from this finally block.(†¤Òô
+lsquid:S00100Š"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥É’ûÿÿÿÿ
+osquid:S00117´"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©‹üÿÿÿÿ
+Msquid:S1143©"5Remove this return statement from this finally block.(÷ÊÚø
+gsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒñÁÍ
+@squid:S1148¦"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148½"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+jsquid:S00117×"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãóá¿
+Qsquid:S1143o"5Remove this return statement from this finally block.(—ß·°ùÿÿÿÿ
+?squid:S1148~"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Msquid:S1143À"5Remove this return statement from this finally block.(÷ÊÚø
+Rsquid:S1143Ş"5Remove this return statement from this finally block.( À¯üÿÿÿÿ
+`squid:S1192"IDefine a constant instead of duplicating this literal "TERMINAR" 3 times.(Şƒš
+¡%squid:RedundantThrowsDeclarationCheckš"jRemove the declaration of thrown exception 'java.lang.NumberFormatException' which is a runtime exception.(ŒÚ¥‹úÿÿÿÿ
+¡%squid:RedundantThrowsDeclarationCheck±"jRemove the declaration of thrown exception 'java.lang.NumberFormatException' which is a runtime exception.(Ë©¢Ûøÿÿÿÿ
+¡%squid:RedundantThrowsDeclarationCheckŠ"jRemove the declaration of thrown exception 'java.lang.NumberFormatException' which is a runtime exception.(Œ©Öşÿÿÿÿ
+Msquid:S1143…"5Remove this return statement from this finally block.(²Û¥â
+¡%squid:RedundantThrowsDeclarationCheckÔ"jRemove the declaration of thrown exception 'java.lang.NumberFormatException' which is a runtime exception.(Š¿øéùÿÿÿÿ

@@ -1,0 +1,55 @@
+
+OServidor.Comunicacao#getStringAtBuffer(Ljava/nio/ByteBuffer;)Ljava/lang/String;N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.java\ \($"1*ý
+1N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.java] ](ÆÃ
+N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.java] ](
+%0java.nio.ByteBuffer"/java.nio.ByteBuffer#flip()Ljava/nio/ByteBuffer;*
+
+linejava.nio.ByteBuffer2flip()¨¥
+N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.java^ ^(/	
+%1int"java.nio.Buffer#remaining()I*
+
+linejava.nio.ByteBuffer2remaining()p
+n
+N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.java^ ^(5
+data$Array"__id*
+""Ú×
+N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.java_ _(
+%2java.nio.ByteBuffer"0java.nio.ByteBuffer#get([B)Ljava/nio/ByteBuffer;*
+
+linejava.nio.ByteBuffer*
+
+data$Array2get([B)|z
+N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.java` `(
+%3java.lang.String"java.lang.String£
+ 
+N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.java` `(#
+%4"java.lang.String#<init>([B)V*
+
+%3java.lang.String*
+
+data$ArrayŠ
+‡
+N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.java` `($
+sjava.lang.String"__id*
+
+%3java.lang.StringÈÅ
+N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.javaa a(
+%5java.nio.ByteBuffer"0java.nio.ByteBuffer#clear()Ljava/nio/ByteBuffer;*
+
+linejava.nio.ByteBuffer2clear()"i
+N
+DC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/Comunicacao.javab b(
+
+sjava.lang.String:
+linejava.nio.ByteBufferB
+Servidor.Comunicacao

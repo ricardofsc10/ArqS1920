@@ -1,0 +1,48 @@
+
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ëòÉÔ
+squid:S1186–"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ş‚ÄÔıÿÿÿÿ
+bsquid:S1192>"FDefine a constant instead of duplicating this literal "preco" 3 times.(ïª‡·ıÿÿÿÿ
+lsquid:S2095Ø"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Œ›¶÷şÿÿÿÿ
+Csquid:S1168œ"+Return an empty collection instead of null.(¥¹ï
+gsquid:S1192;"KDefine a constant instead of duplicating this literal "idContrato" 3 times.(ãöäùÿÿÿÿ
+P
+squid:S106Å"9Replace this use of System.out or System.err by a logger.(çıàà
+asquid:S1192G"JDefine a constant instead of duplicating this literal "encerrado" 3 times.(¥ôìé
+Ysquid:S1126H"BReplace this if-then-else statement by a single method invocation.(ĞéÙ¨
+isquid:S1192="MDefine a constant instead of duplicating this literal "idUtilizador" 3 times.(åæîÿÿÿÿÿ
+Zsquid:S1126µ"BReplace this if-then-else statement by a single method invocation.(ĞéÙ¨
+gsquid:S1192A"KDefine a constant instead of duplicating this literal "quantidade" 3 times.(„È£¥ûÿÿÿÿ
+dsquid:S1192<"HDefine a constant instead of duplicating this literal "idAtivo" 3 times.(™Å¿¡ÿÿÿÿÿ
+^squid:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(Ì‚À°
+ksquid:S2095g"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¼¼’Œüÿÿÿÿ
+fsquid:S2095c"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ş·ï«
+P
+squid:S106…"9Replace this use of System.out or System.err by a logger.(çıàà
+dsquid:S2095¥"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(¾¥ÿÌûÿÿÿÿ
+P
+squid:S106½"9Replace this use of System.out or System.err by a logger.(çıàà
+_squid:S1126å"BReplace this if-then-else statement by a single method invocation.(íÆƒüÿÿÿÿ
+O
+squid:S106X"9Replace this use of System.out or System.err by a logger.(çıàà
+P
+squid:S106ó"9Replace this use of System.out or System.err by a logger.(çıàà
+_squid:S2095Û"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(·¦Ã…
+O
+squid:S106}"9Replace this use of System.out or System.err by a logger.(çıàà
+_squid:S1126°"BReplace this if-then-else statement by a single method invocation.(íÆƒüÿÿÿÿ
+esquid:S1192@"IDefine a constant instead of duplicating this literal "stoploss" 3 times.(¡®—ûÿÿÿÿ
+Csquid:S1168Ğ"+Return an empty collection instead of null.(¥¹ï
+fsquid:S20957"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ù†Äˆ
+^squid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(İŸ±Ï
+O
+squid:S106Q"9Replace this use of System.out or System.err by a logger.(çıàà
+^squid:S1126C"BReplace this if-then-else statement by a single method invocation.(íÆƒüÿÿÿÿ
+^squid:S1192B"GDefine a constant instead of duplicating this literal "compra" 3 times.(¤€¡ú
+_squid:S2095¤"GUse try-with-resources or close this "Statement" in a "finally" clause.(Ì‚À°
+squid:S1186‘"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(äË›Åúÿÿÿÿ
+Dsquid:S1264¦",Replace this "for" loop with a "while" loop.(”æê
+Zsquid:S1126ê"BReplace this if-then-else statement by a single method invocation.(ĞéÙ¨
+P
+squid:S106ú"9Replace this use of System.out or System.err by a logger.(çıàà
+bsquid:S1192?"KDefine a constant instead of duplicating this literal "takeprofit" 3 times.(ŞÃ»
+^squid:S20959"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(·¦Ã…

@@ -1,0 +1,90 @@
+
+6Servidor.ThreadCliente#verRegistos()Ljava/lang/String;R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.java„ „("5*‹
+2R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÁ Á({
+y
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÁ Á(
+rServidor.Registo"__id*
+""*
+3
+1*É
+3R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaË Ë(ôñ
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaË Ë(
+%6java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/Object;)Ljava/lang/StringBuilder;*
+
+sbjava.lang.StringBuilder*
+
+rServidor.Registo2append(Ljava/lang/Object;)àÖ
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÈ È(
+%7java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
+
+sbjava.lang.StringBuilder*
+\n2append(Ljava/lang/String;)*
+2*Ω
+5R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.java‰! ‰($ö
+ó
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.java‰! ‰($
+%0Servidor.ESS_ltd"__id*#*!
+Servidor.ThreadCliente"
+essû
+õ
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.java‰3 ‰(<
+%1Servidor.Utilizador"__id*$*"
+Servidor.ThreadCliente"
+userëé
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.java‰! ‰(=
+%2java.util.List"EServidor.ESS_ltd#listaRegistos(LServidor/Utilizador;)Ljava/util/List;*
+
+%0Servidor.ESS_ltd*
+
+%1Servidor.Utilizador2$listaRegistos(LServidor/Utilizador;)ë
+é
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.java‰ ‰(>
+registosjava.util.List"__id*
+
+%2java.util.Listèå
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÂ Â(,
+%3java.lang.StringBuilder"java.lang.StringBuilder°
+û
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÂ Â(.
+%4"!java.lang.StringBuilder#<init>()V*
+
+%3java.lang.StringBuilderù
+ö
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÂ Â(/
+sbjava.lang.StringBuilder"__id*
+
+%3java.lang.StringBuilder¢ü
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÊ Ê(1
+%5java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;*
+
+sbjava.lang.StringBuilder* 
+         REGISTOS         \n2append(Ljava/lang/String;)*
+2*ú
+1R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÎ Î(“œ
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÎ Î(
+%8java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;*
+
+sbjava.lang.StringBuilder2
+toString()"n
+R
+FC:/Users/35192/Desktop/ArqSw/src/main/java/Servidor/ThreadCliente.javaÎ Î(
+
+%8java.lang.StringB
+Servidor.ThreadCliente

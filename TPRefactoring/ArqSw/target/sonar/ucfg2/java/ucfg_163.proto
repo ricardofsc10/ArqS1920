@@ -1,0 +1,39 @@
+
+6Cliente.ThreadClienteLe#leResposta()Ljava/lang/String;Q
+GC:/Users/35192/Desktop/ArqSw/src/main/java/Cliente/ThreadClienteLe.java ("5*‚
+3Q
+GC:/Users/35192/Desktop/ArqSw/src/main/java/Cliente/ThreadClienteLe.java ($î
+ë
+Q
+GC:/Users/35192/Desktop/ArqSw/src/main/java/Cliente/ThreadClienteLe.java ($
+respostajava.lang.String"__id*
+
+%1java.lang.String"s
+Q
+GC:/Users/35192/Desktop/ArqSw/src/main/java/Cliente/ThreadClienteLe.java (
+
+respostajava.lang.String*œ
+4Q
+GC:/Users/35192/Desktop/ArqSw/src/main/java/Cliente/ThreadClienteLe.java (ü
+ú
+Q
+GC:/Users/35192/Desktop/ArqSw/src/main/java/Cliente/ThreadClienteLe.java (
+%0java.io.BufferedReader"__id*#*!
+Cliente.ThreadClienteLe"
+inœÃ
+Q
+GC:/Users/35192/Desktop/ArqSw/src/main/java/Cliente/ThreadClienteLe.java ($
+%1java.lang.String"3java.io.BufferedReader#readLine()Ljava/lang/String;*
+
+%0java.io.BufferedReader2
+readLine()*
+3*ﬂ
+5Q
+GC:/Users/35192/Desktop/ArqSw/src/main/java/Cliente/ThreadClienteLe.java (Å
+
+Q
+GC:/Users/35192/Desktop/ArqSw/src/main/java/Cliente/ThreadClienteLe.java (
+respostajava.lang.String"__id*
+""*
+4B
+Cliente.ThreadClienteLe

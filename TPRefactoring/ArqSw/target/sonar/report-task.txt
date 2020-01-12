@@ -1,0 +1,7 @@
+organization=ricardofsc10
+projectKey=ArqSw
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.3777
+dashboardUrl=https://sonarcloud.io/dashboard?id=ArqSw
+ceTaskId=AW9y7Xx0A-5yb7hf14xL
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW9y7Xx0A-5yb7hf14xL
