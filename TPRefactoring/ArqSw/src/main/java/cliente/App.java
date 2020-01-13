@@ -1,11 +1,10 @@
 package cliente;
 
-import org.slf4j.Logger;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.util.logging.Logger;
 
 public class App {
 
@@ -15,6 +14,7 @@ public class App {
     private ThreadClienteLe le;
     BufferedReader teclado;
     private Socket cliente;
+    private String string = "Id do ativo";
     Logger log = Logger.getLogger(App.class.getName());
 
 
@@ -22,7 +22,7 @@ public class App {
         this.logado=false;
         menu=  new Menu();
         escreve=new ThreadClienteEscreve(s);
-        le=new ThreadClienteLe(s,this);
+        le=new ThreadClienteLe(s);
         teclado= new BufferedReader(new InputStreamReader(System.in));
         cliente=s;
     }
@@ -52,7 +52,7 @@ public class App {
                         terminaSessao();
                         break;
                 case 1:
-                        consultar_Saldo();
+                        consultarSaldo();
                         break;
                 case 2:
                         listaAtivos();
@@ -80,7 +80,8 @@ public class App {
             Thread.sleep(2000);
             mostraMenu();
         } catch (IOException | InterruptedException e) {
-            log.info("Exception",e);
+            Thread.currentThread().interrupt();
+            log.info("Exception");
         }
     }
 
@@ -100,7 +101,7 @@ public class App {
                         mostraMenu();
                         break;
                     case 2:
-                        registo_input();
+                        registoInput();
                         Thread.sleep(1000);
                         mostraMenu();
                         break;
@@ -108,6 +109,7 @@ public class App {
                 }
 
         } catch (IOException | InterruptedException  | NumberFormatException e) {
+            Thread.currentThread().interrupt();
             log.info("Por favor siga-se pelos números");
             mostraMenu();
         }
@@ -200,7 +202,7 @@ public class App {
         String pedido = "CONTRATOVENDA";
         sb=sb.append(pedido);
         sb.append(" ");
-        log.info("Id do ativo");
+        log.info(string);
         String idAtivo= teclado.readLine();
         sb.append(idAtivo);
         sb.append(" ");
@@ -224,7 +226,7 @@ public class App {
         String pedido = "CONTRATOCOMPRA";
         sb=sb.append(pedido);
         sb.append(" ");
-        log.info("Id do ativo");
+        log.info(string);
         String idAtivo= teclado.readLine();
         sb.append(idAtivo);
         sb.append(" ");

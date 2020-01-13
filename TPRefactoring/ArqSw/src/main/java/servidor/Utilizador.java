@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.*;
 
 public class Utilizador implements Observer{
-	private ESS_ltd ess;
+	private ESSLtd ess;
 	private int id;
 	private String username;
 	private String password;
@@ -47,7 +47,7 @@ public class Utilizador implements Observer{
 
 	public void setPedidosSave(List<Pedido.Memento> pedidosSave) {
 		this.pedidosPendentes=pedidosSave;
-		if(this.pedidosPendentes.isEmpty() == 0)
+		if(this.pedidosPendentes.isEmpty())
 			this.pedidoAtual.restoreFromMemento(this.pedidosPendentes.get(0));
 	}
 	//Qual é o objetivo desta função?
@@ -118,7 +118,7 @@ public class Utilizador implements Observer{
 				", posUltimoRespondido=" + posUltimoRespondido +
 				'}';
 	}
-	public  void setEss(ESS_ltd ess){
+	public  void setEss(ESSLtd ess){
 		this.ess=ess;
 	}
 

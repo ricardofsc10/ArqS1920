@@ -1,11 +1,5 @@
 package servidor;
 
-
-
-
-
-
-
  public class Pedido {
         private Estado estado;
 

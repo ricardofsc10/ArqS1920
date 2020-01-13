@@ -3,8 +3,7 @@ package daos;
 import servidor.Estado;
 import servidor.Pedido;
 import servidor.Utilizador;
-import cliente.App;
-import org.slf4j.Logger;
+import java.util.logging.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,14 +16,16 @@ import java.util.*;
 public class UtilizadorDAO implements Map<Integer, Utilizador> {
 
     private Connection conn;
-    Logger log = Logger.getLogger(App.class.getName());
+    Statement stm;
+    ResultSet rs;
+    PreparedStatement ps;
+    String string = "\"nao fez a query\"";
+    Logger log = Logger.getLogger(UtilizadorDAO.class.getName());
 
 
     @Override
     public synchronized int size() {
         int i = 0;
-        Statement stm = null;
-        ResultSet rs = null;
         try {
             conn = Connect.connect();
             stm = conn.createStatement();
@@ -65,8 +66,6 @@ public class UtilizadorDAO implements Map<Integer, Utilizador> {
     public synchronized Utilizador get(Object key) {
 
         Utilizador u = new Utilizador();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
 
         try {
             conn = Connect.connect();
@@ -97,7 +96,6 @@ public class UtilizadorDAO implements Map<Integer, Utilizador> {
 
     @Override
     public synchronized   Utilizador put(Integer key, Utilizador utilizador) {
-        PreparedStatement ps = null;
         try {
             conn = Connect.connect();
             ps = conn.prepareStatement("DELETE FROM Utilizador WHERE idUtilizador = ?");
@@ -131,12 +129,18 @@ public class UtilizadorDAO implements Map<Integer, Utilizador> {
 
     @Override
     public void putAll(Map<? extends Integer, ? extends Utilizador> map) {
-
+        /**
+         * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+         * nesta classe devido ao "implements Map<....>"
+         */
     }
 
     @Override
     public void clear() {
-
+        /**
+         * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+         * nesta classe devido ao "implements Map<....>"
+         */
     }
 
     @Override
@@ -146,13 +150,11 @@ public class UtilizadorDAO implements Map<Integer, Utilizador> {
 
     @Override
     public synchronized Collection<Utilizador> values() {
-        Collection<Utilizador> col = new HashSet<Utilizador>();
-        PreparedStatement stm = null;
-        ResultSet rs = null;
+        Collection<Utilizador> col = new HashSet<>();
         try {
             conn = Connect.connect();
-            stm = conn.prepareStatement("SELECT * FROM Utilizador");
-             rs = stm.executeQuery();
+            ps = conn.prepareStatement("SELECT * FROM Utilizador");
+            rs = ps.executeQuery();
             while (rs.next()) {
                 Utilizador u = new Utilizador(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getLong(4));
                 List<Pedido.Memento> mementos = mementosUtilizador(rs.getInt(1));
@@ -162,11 +164,11 @@ public class UtilizadorDAO implements Map<Integer, Utilizador> {
             }
 
         } catch (SQLException e) {
-            log.info("nao fez a query");
-            throw new NullPointerException("nao fez a query");
+            log.info(string);
+            throw new NullPointerException(string);
         } finally {
             try {
-                stm.close();
+                ps.close();
                 rs.close();
                 Connect.close(conn);
             } catch (SQLException e) {
@@ -187,8 +189,6 @@ public class UtilizadorDAO implements Map<Integer, Utilizador> {
 
     public  List<Pedido.Memento> mementosUtilizador(int id){
         List<Pedido.Memento> mementos = new ArrayList<>();
-        PreparedStatement ps =null;
-        ResultSet rs = null;
         try {
             conn = Connect.connect();
 
@@ -226,7 +226,6 @@ public class UtilizadorDAO implements Map<Integer, Utilizador> {
     }
  /******************************* NOVO REQUISITO ****************/
     public void putNotificacao(Integer key,String notificacao){
-        PreparedStatement ps = null;
         try {
             conn = Connect.connect();
             ps = conn.prepareStatement("INSERT INTO Notificacao (idUtilizador,descricao,enviado) VALUES (?,?,?)");
@@ -250,28 +249,25 @@ public class UtilizadorDAO implements Map<Integer, Utilizador> {
 
     public synchronized List<String> getNotificacoes(int id) {
         List<String> notificacoes =  new ArrayList<>();
-        PreparedStatement stm = null;
-        ResultSet rs = null;
+
         try {
             conn = Connect.connect();
-            stm = conn.prepareStatement("SELECT * FROM Notificacao where idUtilizador = ? AND enviado = 0");
-            stm.setString(1, Integer.toString((Integer)id));
-            rs = stm.executeQuery();
+            ps = conn.prepareStatement("SELECT * FROM Notificacao where idUtilizador = ? AND enviado = 0");
+            ps.setString(1, Integer.toString((Integer)id));
+            rs = ps.executeQuery();
             while (rs.next()) {
                 notificacoes.add(rs.getString(3));
             }
-            stm = conn.prepareStatement("DELETE FROM Notificacao WHERE idUtilizador = ?");
-            stm.setString(1,Integer.toString((Integer) id));
-            stm.executeUpdate();
-
-
+            ps = conn.prepareStatement("DELETE FROM Notificacao WHERE idUtilizador = ?");
+            ps.setString(1,Integer.toString((Integer) id));
+            ps.executeUpdate();
 
         } catch (SQLException e) {
-            log.info("nao fez a query");
-            throw new NullPointerException("nao fez a query");
+            log.info(string);
+            throw new NullPointerException(string);
         } finally {
             try {
-                stm.close();
+                ps.close();
                 rs.close();
                 Connect.close(conn);
             } catch (SQLException e) {

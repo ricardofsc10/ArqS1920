@@ -1,31 +1,37 @@
 package daos;
 
 import servidor.Registo;
-import cliente.App;
-import org.slf4j.Logger;
 
+import java.util.*;
+import java.util.logging.Logger;
 import java.sql.*;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 public class RegistoDAO implements Map<Integer, Registo> {
     private Connection conn;
-    Logger log = Logger.getLogger(App.class.getName());
+    private Statement stm;
+    private ResultSet rs;
+    private PreparedStatement ps;
+    Logger log = Logger.getLogger(RegistoDAO.class.getName());
     @Override
     public synchronized int size() {
         int i = 0;
         try {
             conn = Connect.connect();
-            Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM Registo");
+            stm = conn.createStatement();
+            rs = stm.executeQuery("SELECT * FROM Registo");
             for (;rs.next();i++);
 
         }catch(SQLException e){
             throw new NullPointerException(e.getMessage());
         }finally {
-            Connect.close(conn);
+            try {
+                Connect.close(conn);
+                stm.close();
+                rs.close();
+            } catch (SQLException e) {
+                log.info("SQLException");
+            }
+
         }
         return i;
 
@@ -55,7 +61,7 @@ public class RegistoDAO implements Map<Integer, Registo> {
     public synchronized Registo put(Integer key, Registo registo) {
         try{
             conn = Connect.connect();
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM Registo WHERE idRegisto = ?");
+            ps = conn.prepareStatement("DELETE FROM Registo WHERE idRegisto = ?");
             ps.setString(1,Integer.toString((Integer) key));
             ps.executeUpdate();
 
@@ -73,6 +79,7 @@ public class RegistoDAO implements Map<Integer, Registo> {
         finally{
             try{
                 Connect.close(conn);
+                ps.close();
 
             }
             catch(Exception e){
@@ -90,12 +97,18 @@ public class RegistoDAO implements Map<Integer, Registo> {
 
     @Override
     public void putAll(Map<? extends Integer, ? extends Registo> map) {
-
+        /**
+         * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+         * nesta classe devido ao "implements Map<....>"
+         */
     }
 
     @Override
     public void clear() {
-
+        /**
+         * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+         * nesta classe devido ao "implements Map<....>"
+         */
     }
 
     @Override
@@ -108,8 +121,8 @@ public class RegistoDAO implements Map<Integer, Registo> {
         Collection<Registo> col = new HashSet<>();
         try {
             conn = Connect.connect();
-            Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM Registo");
+            stm = conn.createStatement();
+            rs = stm.executeQuery("SELECT * FROM Registo");
             while (rs.next()) {
                 col.add(
                         new Registo(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getFloat(4),rs.getInt(5))
@@ -119,7 +132,13 @@ public class RegistoDAO implements Map<Integer, Registo> {
         }catch(SQLException e){
             throw new NullPointerException(e.getMessage());
         }finally {
-            Connect.close(conn);
+            try {
+                Connect.close(conn);
+                stm.close();
+                rs.close();
+            } catch (SQLException e) {
+                log.info("SQLException");
+            }
         }
 
 

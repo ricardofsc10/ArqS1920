@@ -2,13 +2,13 @@ package servidor;
 
 public class Estado {
     private String pedido;
-    private boolean state;
+    private boolean status;
     private Integer identificador;
     private Integer idUtilizador;
 
     public Estado(String pedido, boolean estado,int id,int idU){
         this.pedido=pedido;
-        this.state=estado;
+        this.status=estado;
         this.identificador = id;
         this.idUtilizador= idU;
     }
@@ -18,7 +18,7 @@ public class Estado {
     }
 
     public boolean getEstado(){
-        return state;
+        return status;
     }
 
     public Integer getIdentificador() {
@@ -30,7 +30,7 @@ public class Estado {
     }
 
     public void setEstado(boolean estado){
-        this.estado= estado;
+        this.status= estado;
     }
 
 }

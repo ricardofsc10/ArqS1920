@@ -1,24 +1,26 @@
 package daos;
 
 import servidor.Pedido;
-import cliente.App;
-import org.slf4j.Logger;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.logging.Logger;
 
 import java.sql.*;
-import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
 public class PedidoDAO implements Map<Integer, Pedido> {
 
     private Connection conn;
-    Logger log = Logger.getLogger(App.class.getName());
+    private ResultSet rs;
+    private Statement stm;
+    PreparedStatement ps;
+    Logger log = Logger.getLogger(PedidoDAO.class.getName());
 
     @Override
     public synchronized int size() {
         int i = 0;
-        Statement stm = null;
-        ResultSet rs = null;
         try {
             conn = Connect.connect();
             stm = conn.createStatement();
@@ -33,7 +35,7 @@ public class PedidoDAO implements Map<Integer, Pedido> {
                 rs.close();
                 Connect.close(conn);
             } catch (SQLException e) {
-                e.printStackTrace();
+                log.info(e.getMessage());
             }
 
         }
@@ -65,7 +67,7 @@ public class PedidoDAO implements Map<Integer, Pedido> {
     public synchronized Pedido put(Integer key, Pedido pedido) {
         try{
             conn =  Connect.connect();
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM Pedido WHERE idPedido = ?");
+            ps = conn.prepareStatement("DELETE FROM Pedido WHERE idPedido = ?");
             ps.setString(1,Integer.toString((Integer) key));
             ps.executeUpdate();
 
@@ -80,7 +82,7 @@ public class PedidoDAO implements Map<Integer, Pedido> {
             ps.setString(4, pedido.getEstado().getPedido());
             ps.executeUpdate();
         }
-        catch(SQLException e){
+        catch(SQLException | NullPointerException e){
             log.info(e.getMessage());
         }
         finally{
@@ -97,11 +99,18 @@ public class PedidoDAO implements Map<Integer, Pedido> {
 
     @Override
     public void putAll(Map<? extends Integer, ? extends Pedido> map) {
-
+        /**
+         * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+         * nesta classe devido ao "implements Map<....>"
+         */
     }
 
     @Override
     public void clear() {
+        /**
+         * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+         * nesta classe devido ao "implements Map<....>"
+         */
 
     }
 

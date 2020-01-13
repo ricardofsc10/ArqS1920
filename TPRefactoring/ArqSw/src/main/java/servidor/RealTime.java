@@ -5,13 +5,15 @@ import yahoofinance.YahooFinance;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.logging.Logger;
 
 class UpdateAtivo extends Thread{
 
-    private ESS_ltd ess ;
+    private ESSLtd ess ;
     private String nomeAtivo;
+    Logger log = Logger.getLogger(UpdateAtivo.class.getName());
 
-    public UpdateAtivo(ESS_ltd ess,String nomeAtivo) {
+    public UpdateAtivo(ESSLtd ess,String nomeAtivo) {
         this.ess = ess;
         this.nomeAtivo=nomeAtivo;
     }
@@ -43,8 +45,8 @@ class UpdateAtivo extends Thread{
 
         }
         } catch (IOException | InterruptedException e) {
-                    e.printStackTrace();
-                }
+                Thread.currentThread().interrupt();
+                log.info(e.getMessage()); }
 
     }
 
@@ -52,9 +54,9 @@ class UpdateAtivo extends Thread{
 
 public class RealTime {
 
-    private ESS_ltd ess ;
+    private ESSLtd ess;
 
-    public RealTime(ESS_ltd ees) {
+    public RealTime(ESSLtd ees) {
         this.ess = ees;
     }
     public void update() throws IOException {

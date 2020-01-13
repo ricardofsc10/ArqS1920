@@ -1,20 +1,18 @@
 package daos;
 
+import servidor.AuxContrato;
 import servidor.Contrato;
-import cliente.App;
-import org.slf4j.Logger;
+
+import java.util.*;
+import java.util.logging.Logger;
 
 
 import java.sql.*;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 public class ContratoDAO implements Map<Integer, Contrato> {
 
     private Connection conn;
-    Logger log = Logger.getLogger(App.class.getName());
+    Logger log = Logger.getLogger(ContratoDAO.class.getName());
     private static final String ID_CONTRATO = "idContrato";
     private static final String ID_ATIVO = "idAtivo";
     private static final String ID_UTILIZADOR = "idUtilizador";
@@ -24,6 +22,11 @@ public class ContratoDAO implements Map<Integer, Contrato> {
     private static final String QUANTIDADE = "quantidade";
     private static final String COMPRA = "compra";
     private static final String ENCERRADO = "encerrado";
+    Statement stm;
+    ResultSet rs;
+    PreparedStatement ps;
+    boolean comprar;
+    boolean fechar;
 
 
     @Override
@@ -31,14 +34,20 @@ public class ContratoDAO implements Map<Integer, Contrato> {
         int i = 0;
         try {
             conn = Connect.connect();
-            Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM Contrato");
+            stm = conn.createStatement();
+            rs = stm.executeQuery("SELECT * FROM Contrato");
             for (;rs.next();i++);
 
         }catch(SQLException e){
             throw new NullPointerException(e.getMessage());
         }finally {
-            Connect.close(conn);
+            try {
+                stm.close();
+                rs.close();
+                Connect.close(conn);
+            } catch (SQLException e) {
+                log.info(e.getMessage());
+            }
         }
         return i;
 
@@ -65,9 +74,9 @@ public class ContratoDAO implements Map<Integer, Contrato> {
         Contrato c = new Contrato();
         try{
             conn = Connect.connect();
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Contrato WHERE idContrato= ?");
+            ps = conn.prepareStatement("SELECT * FROM Contrato WHERE idContrato= ?");
             ps.setString(1,Integer.toString((Integer) key));
-            ResultSet rs = ps.executeQuery();
+            rs = ps.executeQuery();
             if(rs.next()){
                 c.setId(rs.getInt(ID_CONTRATO));
                 c.setIdAtivo(rs.getInt(ID_ATIVO));
@@ -77,16 +86,12 @@ public class ContratoDAO implements Map<Integer, Contrato> {
                 c.setStopLoss(rs.getLong(STOP_LOSS));
                 c.setQuantidade(rs.getInt(QUANTIDADE));
                 int compra = rs.getInt(COMPRA);
-                if(compra==0)
-                    c.setCompra(false);
-                else
-                    c.setCompra(true);
-                int encerrado = rs.getInt(ENCERRADO);
-                if(encerrado==0)
-                    c.setEncerrado(false);
-                else
-                    c.setEncerrado(true);
+                comprar = AuxContrato.contratoAux(compra);
+                c.setCompra(comprar);
 
+                int encerrado = rs.getInt(ENCERRADO);
+                fechar = AuxContrato.contratoAux(encerrado);
+                c.setCompra(fechar);
             }
             else c = null;
         }
@@ -95,6 +100,8 @@ public class ContratoDAO implements Map<Integer, Contrato> {
         }
         finally{
             try{
+                ps.close();
+                rs.close();
                 Connect.close(conn);
             }
             catch(Exception e){
@@ -109,7 +116,7 @@ public class ContratoDAO implements Map<Integer, Contrato> {
     public synchronized Contrato put(Integer key, Contrato contrato) {
         try{
             conn = Connect.connect();
-            PreparedStatement ps = conn.prepareStatement("DELETE FROM Contrato WHERE idContrato = ?");
+            ps = conn.prepareStatement("DELETE FROM Contrato WHERE idContrato = ?");
             ps.setString(1,Integer.toString((Integer) key));
             ps.executeUpdate();
 
@@ -162,7 +169,10 @@ public class ContratoDAO implements Map<Integer, Contrato> {
 
     @Override
     public void clear() {
-
+    /**
+     * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+     * nesta classe devido ao "implements Map<....>"
+    */
     }
 
     @Override
@@ -175,8 +185,8 @@ public class ContratoDAO implements Map<Integer, Contrato> {
         Collection<Contrato> col = new HashSet<>();
         try {
             conn = Connect.connect();
-            Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("SELECT * FROM Contrato where encerrado = 0");
+            stm = conn.createStatement();
+            rs = stm.executeQuery("SELECT * FROM Contrato where encerrado = 0");
             while (rs.next()) {
                 Contrato c = new Contrato();
                 c.setId(rs.getInt(ID_CONTRATO));
@@ -187,15 +197,12 @@ public class ContratoDAO implements Map<Integer, Contrato> {
                 c.setStopLoss(rs.getLong(STOP_LOSS));
                 c.setQuantidade(rs.getInt(QUANTIDADE));
                 int compra = rs.getInt(COMPRA);
-                if(compra==0)
-                    c.setCompra(false);
-                else
-                    c.setCompra(true);
+                comprar = AuxContrato.contratoAux(compra);
+                c.setCompra(comprar);
+
                 int encerrado = rs.getInt(ENCERRADO);
-                if(encerrado==0)
-                    c.setEncerrado(false);
-                else
-                    c.setEncerrado(true);
+                fechar = AuxContrato.contratoAux(encerrado);
+                c.setCompra(fechar);
                 col.add(c);
             }
         }
@@ -204,6 +211,8 @@ public class ContratoDAO implements Map<Integer, Contrato> {
         }
         finally{
             try{
+                stm.close();
+                rs.close();
                 Connect.close(conn);
 
             }
@@ -227,10 +236,10 @@ public class ContratoDAO implements Map<Integer, Contrato> {
         Contrato c = new Contrato();
         try{
             conn = Connect.connect();
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Contrato WHERE idContrato= ? AND idUtilizador= ?");
+            ps = conn.prepareStatement("SELECT * FROM Contrato WHERE idContrato= ? AND idUtilizador= ?");
             ps.setString(1,Integer.toString((Integer) key));
             ps.setString(2,Integer.toString((Integer) idUtilizador));
-            ResultSet rs = ps.executeQuery();
+            rs = ps.executeQuery();
             if(rs.next()){
                 c.setId(rs.getInt(ID_CONTRATO));
                 c.setIdAtivo(rs.getInt(ID_ATIVO));
@@ -240,15 +249,12 @@ public class ContratoDAO implements Map<Integer, Contrato> {
                 c.setStopLoss(rs.getLong(STOP_LOSS));
                 c.setQuantidade(rs.getInt(QUANTIDADE));
                 int compra = rs.getInt(COMPRA);
-                if(compra==0)
-                    c.setCompra(false);
-                else
-                    c.setCompra(true);
+                comprar = AuxContrato.contratoAux(compra);
+                c.setCompra(comprar);
+
                 int encerrado = rs.getInt(ENCERRADO);
-                if(encerrado==0)
-                    c.setEncerrado(false);
-                else
-                    c.setEncerrado(true);
+                fechar = AuxContrato.contratoAux(encerrado);
+                c.setCompra(fechar);
 
             }
             else c = null;
@@ -258,6 +264,8 @@ public class ContratoDAO implements Map<Integer, Contrato> {
         }
         finally{
             try{
+                rs.close();
+                ps.close();
                 Connect.close(conn);
             }
             catch(Exception e){

@@ -10,7 +10,7 @@ import java.util.*;
 import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
 
-public class ESS_ltd {
+public class ESSLtd {
 
 	private UtilizadorDAO utilizadores;
 	private AtivoDAO ativos;
@@ -19,7 +19,7 @@ public class ESS_ltd {
 	private PedidoDAO pedidos;
 
 
-	public ESS_ltd() {
+	public ESSLtd() {
 		this.utilizadores = new UtilizadorDAO();
 		this.ativos = new AtivoDAO();
 		this.contratos = new ContratoDAO();
@@ -82,17 +82,17 @@ public class ESS_ltd {
 
 	public  void criarContratoVenda(Utilizador u, int idAtivo, float takeprofit, float stoploss, int quantidade) throws AtivoInvalidoException, SaldoInsuficienteException {
 
-		Ativo a = this.ativos.get(idAtivo).clone();
+		Ativo a = this.ativos.get(idAtivo).copy();
 		if (a == null)
 			throw new AtivoInvalidoException("Ativo nao existe");
 		else {
 			int size = this.contratos.size() + 1;
 			float preco = a.getPrecoVenda();
-			float valor_total = preco * quantidade;
+			float valorTotal = preco * quantidade;
 			float saldo = u.getPlafom();
-			if (saldo < valor_total)
+			if (saldo < valorTotal)
 				throw new SaldoInsuficienteException("Saldo Insuficiente");
-			u.setPlafom(u.getPlafom() - valor_total);
+			u.setPlafom(u.getPlafom() - valorTotal);
 			this.utilizadores.put(u.getId(), u);
 			Contrato c = new Contrato(size, idAtivo, u.getId(), preco, takeprofit, stoploss, quantidade, false, false);
 			this.contratos.put(size, c);//poe na lista total de contratos
@@ -107,11 +107,11 @@ public class ESS_ltd {
 		else {
 			int size = this.contratos.size() + 1;
 			float preco = a.getPrecoVenda();
-			float valor_total = preco * quantidade;
+			float valorTotal = preco * quantidade;
 			float saldo = u.getPlafom();
-			if (saldo < valor_total)
+			if (saldo < valorTotal)
 				throw new SaldoInsuficienteException("Saldo Insuficiente");
-			u.setPlafom(u.getPlafom() - valor_total);
+			u.setPlafom(u.getPlafom() - valorTotal);
 			this.utilizadores.put(u.getId(), u);
 			Contrato c = new Contrato(size, idAtivo, u.getId(), preco, takeprofit, stoploss, quantidade, true, false);
 			this.contratos.put(size, c);//poe na lista total de contratos
@@ -128,7 +128,6 @@ public class ESS_ltd {
 	}
 
 	public  void fecharContrato(Utilizador u, int idContrato) throws ContratoInvalidoException {
-		boolean sucess = false;
 		Contrato c = this.contratos.get(idContrato,u.getId());
 			if (c != null && !c.isEncerrado()) {
 
@@ -138,7 +137,6 @@ public class ESS_ltd {
 					fecharContratoVenda(u, c);
 				return;
 			}
-		if (!sucess)
 			throw new ContratoInvalidoException("Este contrato nao existe ou nao pertence ao utilizador");
 
 
@@ -171,12 +169,12 @@ public class ESS_ltd {
 
 	public  void fecharContratoCompra(Utilizador u, Contrato c) {
 		int size = this.registos.size() + 1;
-		int id_ativo = c.getIdAtivo();
-		Ativo a = ativos.get(id_ativo).clone();// temos que ir ver o valor atual do ativo
-		float valor_Atual = a.getPrecoCompra() * c.getQuantidade();
-		float valor_compra = c.getPreco() * c.getQuantidade();
-		float lucro = valor_Atual - valor_compra;
-		u.setPlafom(u.getPlafom() + valor_compra + lucro);
+		int idAtivo = c.getIdAtivo();
+		Ativo a = ativos.get(idAtivo).clone();// temos que ir ver o valor atual do ativo
+		float valorAtual = a.getPrecoCompra() * c.getQuantidade();
+		float valorCompra = c.getPreco() * c.getQuantidade();
+		float lucro = valorAtual - valorCompra;
+		u.setPlafom(u.getPlafom() + valorCompra + lucro);
 		this.utilizadores.put(u.getId(), u);
 		Registo r = new Registo(size, u.getId(), a.getId(), lucro, c.getQuantidade());
 		this.registos.put(size, r);
@@ -187,12 +185,12 @@ public class ESS_ltd {
 
 	public  void fecharContratoVenda(Utilizador u, Contrato c) {
 		int size = this.registos.size() + 1;
-		int id_ativo = c.getIdAtivo();
-		Ativo a = ativos.get(id_ativo).clone();// temos que ir ver o valor atual do ativo
-		float valor_Atual = a.getPrecoVenda() * c.getQuantidade();
-		float valor_venda = c.getPreco() * c.getQuantidade();
-		float lucro = valor_venda - valor_Atual;
-		u.setPlafom(u.getPlafom() + valor_venda + lucro);
+		int idAtivo = c.getIdAtivo();
+		Ativo a = ativos.get(idAtivo).clone();// temos que ir ver o valor atual do ativo
+		float valorAtual = a.getPrecoVenda() * c.getQuantidade();
+		float valorVenda = c.getPreco() * c.getQuantidade();
+		float lucro = valorVenda - valorAtual;
+		u.setPlafom(u.getPlafom() + valorVenda + lucro);
 		this.utilizadores.put(u.getId(), u);
 		Registo r = new Registo(size, u.getId(), a.getId(), lucro, c.getQuantidade());
 		this.registos.put(size, r);

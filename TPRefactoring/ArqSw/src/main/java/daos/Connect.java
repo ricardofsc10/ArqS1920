@@ -1,7 +1,6 @@
 package daos;
 
-import cliente.App;
-import org.slf4j.Logger;
+import java.util.logging.Logger;
 
 import java.sql.Connection;
 import java.nio.file.Paths;
@@ -10,11 +9,12 @@ import java.sql.SQLException;
 
 public class Connect {
 
-    Logger log = Logger.getLogger(App.class.getName());
+
+     private static Logger log = Logger.getLogger(Connect.class.getName());
 
 
     private Connect() {
-        throw new IllegalStaeException("Utility class");
+        throw new IllegalStateException("Utility class");
 
     }
 
@@ -38,7 +38,7 @@ public class Connect {
                 c.close();
             }
         } catch (Exception e){
-            e.printStackTrace();
+            log.info(e.getMessage());
         }
     }
 }

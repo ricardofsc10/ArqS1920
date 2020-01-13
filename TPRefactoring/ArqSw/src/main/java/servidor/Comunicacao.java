@@ -10,7 +10,7 @@ import java.nio.*;
 import java.nio.channels.*;
 import java.util.concurrent.*;
 
-public class Comunicacao extends Thread {
+public class Comunicacao  {
 
     private AsynchronousSocketChannel sc;
     private ByteBuffer inn = ByteBuffer.allocate(1024);
@@ -52,7 +52,10 @@ public class Comunicacao extends Thread {
 
         @Override
         public void failed(Throwable throwable, Object o) {
-
+            /**
+             * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+             * nesta classe devido ao "implements Map<....>"
+             */
         }
     };
 
@@ -69,7 +72,10 @@ public class Comunicacao extends Thread {
 
         @Override
         public void failed(Throwable throwable, Object o) {
-
+            /**
+             * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+             * nesta classe devido ao "implements Map<....>"
+             */
         }
     };
 
@@ -82,7 +88,7 @@ public class Comunicacao extends Thread {
         }
     }
 
-    public void string_to_ByteBuffer(String res) {
+    public void stringToByteBuffer(String res) {
         synchronized (msgQueue) {
             String aux = res + '\n';
             ByteBuffer out = ByteBuffer.allocate(1024);
@@ -100,9 +106,9 @@ public class Comunicacao extends Thread {
         if (resposta.length() > 1024) {
             String[] strings = resposta.split("\n");
             for (String s : strings)
-                string_to_ByteBuffer(s);
+                stringToByteBuffer(s);
         } else {
-            string_to_ByteBuffer(resposta);
+            stringToByteBuffer(resposta);
         }
     }
 }

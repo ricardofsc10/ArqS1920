@@ -1,8 +1,8 @@
 package daos;
 
+import servidor.AuxContrato;
 import servidor.*;
-import cliente.App;
-import org.slf4j.Logger;
+import java.util.logging.Logger;
 
 import java.sql.*;
 import java.util.*;
@@ -10,13 +10,22 @@ import java.util.*;
 public class AtivoDAO implements Map<Integer, Ativo> {
 
     private Connection conn;
-    Logger log = Logger.getLogger(App.class.getName());
+    Statement stm;
+    ResultSet rs;
+    ResultSet c;
+    ResultSet k;
+    ResultSet aa;
+    PreparedStatement ps;
+    PreparedStatement cc;
+    PreparedStatement us;
+    PreparedStatement as;
+    Logger log = Logger.getLogger(AtivoDAO.class.getName());
+    String string = "idAtivo";
 
     @Override
     public synchronized int size() {
         int i = 0;
-        Statement stm = null;
-        ResultSet rs= null;
+
         try {
             conn = Connect.connect();
             stm = conn.createStatement();
@@ -47,8 +56,6 @@ public class AtivoDAO implements Map<Integer, Ativo> {
     @Override
     public boolean containsKey(Object key) {
         boolean res = false;
-        PreparedStatement ps= null;
-        ResultSet rs=null;
         try{
             conn = Connect.connect();
             ps = conn.prepareStatement("SELECT * FROM Ativo WHERE descricao = ?");
@@ -59,19 +66,14 @@ public class AtivoDAO implements Map<Integer, Ativo> {
             log.info(e.getMessage());
         }
         finally {
-            try {
                 try {
                     ps.close();
                     rs.close();
                     Connect.close(conn);
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     log.info(e.getMessage());
                 }
 
-            }
-            catch (Exception e){
-                log.info(e.getMessage());
-            }
         }
         return res;
     }
@@ -93,8 +95,6 @@ public class AtivoDAO implements Map<Integer, Ativo> {
 
     @Override
     public synchronized Ativo get(Object key) {
-        PreparedStatement ps = null;
-        ResultSet rs = null;
         Ativo a = new Ativo();
         try{
             conn = Connect.connect();
@@ -102,7 +102,7 @@ public class AtivoDAO implements Map<Integer, Ativo> {
             ps.setString(1,Integer.toString((Integer) key));
             rs = ps.executeQuery();
             if(rs.next()){
-                a.setId(rs.getInt("idAtivo"));
+                a.setId(rs.getInt(string));
                 a.setPrecoCompra(rs.getFloat("precoCompra"));
                 a.setPrecoVenda(rs.getFloat("precoVenda"));
                 a.setDescricao(rs.getString("descricao"));
@@ -129,7 +129,6 @@ public class AtivoDAO implements Map<Integer, Ativo> {
 
     @Override
     public synchronized Ativo put(Integer key, Ativo ativo) {
-        PreparedStatement ps = null;
         try{
             conn = Connect.connect();
             ps = conn.prepareStatement("DELETE FROM Ativo WHERE idAtivo = ?");
@@ -169,12 +168,19 @@ public class AtivoDAO implements Map<Integer, Ativo> {
 
     @Override
     public void putAll(Map<? extends Integer, ? extends Ativo> map) {
+        /**
+         * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+         * nesta classe devido ao "implements Map<....>"
+         */
 
     }
 
     @Override
     public void clear() {
-
+        /**
+         * este método está vazio porque não é necessário, embora seja obrigatório ele estar presente
+         * nesta classe devido ao "implements Map<....>"
+         */
     }
 
     @Override
@@ -185,9 +191,7 @@ public class AtivoDAO implements Map<Integer, Ativo> {
     @Override
     public synchronized Collection<Ativo> values() {
         Collection<Ativo> col;
-        col = new HashSet<Ativo>();
-        Statement stm = null;
-        ResultSet rs = null;
+        col = new HashSet<>();
 
         try {
             conn = Connect.connect();
@@ -207,7 +211,7 @@ public class AtivoDAO implements Map<Integer, Ativo> {
                 rs.close();
                 Connect.close(conn);
             } catch (SQLException e) {
-                e.printStackTrace();
+                log.info(e.getMessage());
             }
 
         }
@@ -225,15 +229,6 @@ public class AtivoDAO implements Map<Integer, Ativo> {
 
 
     public synchronized Ativo get(Object descricao, Object ess){
-        PreparedStatement ps = null;
-        PreparedStatement cc = null;
-        PreparedStatement us = null;
-        PreparedStatement as = null;
-
-        ResultSet rs = null;
-        ResultSet c = null;
-        ResultSet k = null;
-        ResultSet aa = null;
         Ativo a = new Ativo();
         try{
             conn = Connect.connect();
@@ -242,13 +237,13 @@ public class AtivoDAO implements Map<Integer, Ativo> {
             rs = ps.executeQuery();
 
             if(rs.next()){
-                a.setId(rs.getInt("idAtivo"));
+                a.setId(rs.getInt(string));
                 a.setPrecoCompra(rs.getFloat("precoCompra"));
                 a.setPrecoVenda(rs.getFloat("precoVenda"));
                 a.setDescricao(rs.getString("descricao"));
             }
             cc = conn.prepareStatement("SELECT * FROM Contrato WHERE idAtivo = ? AND encerrado = 0");
-            cc.setString(1,Integer.toString((Integer) rs.getInt("idAtivo")));
+            cc.setString(1,Integer.toString((Integer) rs.getInt(string)));
             c = cc.executeQuery();
 
             while(c.next()) {
@@ -261,16 +256,15 @@ public class AtivoDAO implements Map<Integer, Ativo> {
                 contrato.setStopLoss(c.getFloat("stoploss"));
                 contrato.setQuantidade(c.getInt("quantidade"));
                 int compra = c.getInt("compra");
-                if(compra==0)
-                    contrato.setCompra(false);
-                else
-                    contrato.setCompra(true);
                 int encerrado = c.getInt("encerrado");
-                if(encerrado==0)
-                    contrato.setEncerrado(false);
-                else
-                    contrato.setEncerrado(true);
-                contrato.setEss((ESS_ltd) ess);
+
+                boolean comprar = AuxContrato.contratoAux(compra);
+                contrato.setCompra(comprar);
+
+                boolean fechar = AuxContrato.contratoAux(encerrado);
+                contrato.setCompra(fechar);
+
+                contrato.setEss((ESSLtd) ess);
                 a.registerObserver(contrato);
             }
             us = conn.prepareStatement("SELECT * FROM Seguidores s ,Utilizador u WHERE idAtivo = ?  AND u.idUtilizador=s.idUtilizador");
@@ -297,7 +291,7 @@ public class AtivoDAO implements Map<Integer, Ativo> {
                 }
 
                 utilizador.setaSeguir(ativosSeguidos);
-                utilizador.setEss((ESS_ltd)ess);
+                utilizador.setEss((ESSLtd)ess);
                 a.registerObserver(utilizador);
             }
 
@@ -314,9 +308,9 @@ public class AtivoDAO implements Map<Integer, Ativo> {
         return a;
     }
 
+
 /******************* NOVO REQUISITO*******************/
     public synchronized  void putSeguidor(Integer key,Ativo a){
-        PreparedStatement ps = null;
         try{
             conn = Connect.connect();
             ps = conn.prepareStatement("DELETE FROM Seguidores WHERE idAtivo = ? AND idUtilizador= ?" );
@@ -340,7 +334,7 @@ public class AtivoDAO implements Map<Integer, Ativo> {
                 ps.close();
                 Connect.close(conn);
             } catch (SQLException e) {
-                e.printStackTrace();
+               log.info(e.getMessage());
             }
 
         }

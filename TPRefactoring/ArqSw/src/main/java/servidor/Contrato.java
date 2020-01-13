@@ -4,7 +4,7 @@ package servidor;
 
 public class Contrato implements Observer {
 
-	private ESS_ltd ess;
+	private ESSLtd ess;
 	private int id;
 	private int idAtivo;
 	private int idUtilizador;
@@ -52,7 +52,7 @@ public class Contrato implements Observer {
 		this.encerrado = false;
     }
 
-	public void setEss(ESS_ltd ess) {
+	public void setEss(ESSLtd ess) {
 		this.ess = ess;
 	}
 
@@ -128,7 +128,7 @@ public class Contrato implements Observer {
 		this.encerrado = encerrado;
 	}
 
-	public Contrato clone(){
+	public Contrato copy(){
 		return new Contrato(this);
 	}
 
@@ -163,6 +163,10 @@ public class Contrato implements Observer {
 				isEncerrado() == contrato.isEncerrado();
 	}
 
+	@Override
+	public int hashCode() {
+		return 0;
+	}
 
 	@Override
 	public void update(Ativo a) {

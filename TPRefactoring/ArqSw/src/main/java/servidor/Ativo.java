@@ -21,7 +21,7 @@ public class Ativo implements Subject {
 		this.descricao = descricao;
 		this.observers = new ArrayList<>();
 	}
-	public Ativo(Ativo a) {
+	public Ativo (Ativo a) {
 		this.id = a.getId();
 		this.precoCompra = a.getPrecoCompra();
 		this.precoVenda = a.getPrecoVenda();
@@ -69,9 +69,10 @@ public class Ativo implements Subject {
 		this.descricao = descricao;
 	}
 
-	public Ativo clone(){
-		return  new Ativo(this);
+	public Ativo copy(){
+		return new Ativo(this);
 	}
+
 
 	@Override
 	public String toString() {
@@ -87,6 +88,11 @@ public class Ativo implements Subject {
 				Float.compare(ativo.getPrecoVenda(), getPrecoVenda()) == 0 &&
 				Float.compare(ativo.getPrecoCompra(), getPrecoCompra()) == 0 &&
 				Objects.equals(getDescricao(), ativo.getDescricao());
+	}
+
+	@Override
+	public int hashCode(){
+		return 0;
 	}
 
 	/*****************************************************************************/
