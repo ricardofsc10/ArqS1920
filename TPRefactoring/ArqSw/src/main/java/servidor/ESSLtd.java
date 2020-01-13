@@ -73,7 +73,7 @@ public class ESSLtd {
 	public  List<Ativo> listarAtivos() {
 		List<Ativo> ativosList = new ArrayList<>();
 		for (Ativo a : this.ativos.values())
-			ativosList.add(a.clone());
+			ativosList.add(a.copy());
 
 		return ativosList;
 
@@ -101,7 +101,7 @@ public class ESSLtd {
 
 	public  void criarContratoCompra(Utilizador u, int idAtivo, float takeprofit, float stoploss, int quantidade) throws AtivoInvalidoException, SaldoInsuficienteException {
 
-		Ativo a = this.ativos.get(idAtivo).clone();
+		Ativo a = this.ativos.get(idAtivo).copy();
 		if (a == null)
 			throw new AtivoInvalidoException("Ativo nao existe");
 		else {
@@ -170,7 +170,7 @@ public class ESSLtd {
 	public  void fecharContratoCompra(Utilizador u, Contrato c) {
 		int size = this.registos.size() + 1;
 		int idAtivo = c.getIdAtivo();
-		Ativo a = ativos.get(idAtivo).clone();// temos que ir ver o valor atual do ativo
+		Ativo a = ativos.get(idAtivo).copy();// temos que ir ver o valor atual do ativo
 		float valorAtual = a.getPrecoCompra() * c.getQuantidade();
 		float valorCompra = c.getPreco() * c.getQuantidade();
 		float lucro = valorAtual - valorCompra;
@@ -186,7 +186,7 @@ public class ESSLtd {
 	public  void fecharContratoVenda(Utilizador u, Contrato c) {
 		int size = this.registos.size() + 1;
 		int idAtivo = c.getIdAtivo();
-		Ativo a = ativos.get(idAtivo).clone();// temos que ir ver o valor atual do ativo
+		Ativo a = ativos.get(idAtivo).copy();// temos que ir ver o valor atual do ativo
 		float valorAtual = a.getPrecoVenda() * c.getQuantidade();
 		float valorVenda = c.getPreco() * c.getQuantidade();
 		float lucro = valorVenda - valorAtual;
