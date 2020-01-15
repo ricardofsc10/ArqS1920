@@ -1,8 +1,7 @@
 package servidor;
 
  public class Pedido {
-        private Estado estado;
-
+     private Estado estado;
 
      public void set(Estado estado){
          this.estado= estado;
@@ -10,9 +9,6 @@ package servidor;
      public void set (String pedido,boolean estado,int identificador,int idU){
          this.estado= new Estado(pedido,estado,identificador,idU);
      }
-
-
-
      public Memento saveToMemento()
      {
          return new Memento(this.estado);
@@ -27,7 +23,6 @@ package servidor;
 
 
      public static class Memento {
-
          private final Estado estado;
 
          public Memento(Estado estado)
@@ -40,7 +35,6 @@ package servidor;
              return estado;
          }
      }
-
  }
 
 

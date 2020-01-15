@@ -25,9 +25,7 @@ public class ESSLtd {
 		this.contratos = new ContratoDAO();
 		this.registos = new RegistoDAO();
 		this.pedidos = new PedidoDAO();
-
 	}
-
 
 	public  Utilizador iniciarSessao(String username, String password) throws UtilizadorInvalidoException {
 		Utilizador u = verficaUtilizador(username);
@@ -39,8 +37,6 @@ public class ESSLtd {
 				throw new UtilizadorInvalidoException("Username ou password errada");
 		}
 		else throw new UtilizadorInvalidoException("Username ou password errada");
-
-
 	}
 
 	public  void registarUtilizador(String username, String password, int saldo) throws UsernameInvalidoException {
@@ -76,46 +72,36 @@ public class ESSLtd {
 			ativosList.add(a.copy());
 
 		return ativosList;
-
 	}
 
-
 	public  void criarContratoVenda(Utilizador u, int idAtivo, float takeprofit, float stoploss, int quantidade) throws AtivoInvalidoException, SaldoInsuficienteException {
-
-		Ativo a = this.ativos.get(idAtivo).copy();
-		if (a == null)
-			throw new AtivoInvalidoException("Ativo nao existe");
-		else {
-			int size = this.contratos.size() + 1;
-			float preco = a.getPrecoVenda();
-			float valorTotal = preco * quantidade;
-			float saldo = u.getPlafom();
-			if (saldo < valorTotal)
-				throw new SaldoInsuficienteException("Saldo Insuficiente");
-			u.setPlafom(u.getPlafom() - valorTotal);
-			this.utilizadores.put(u.getId(), u);
-			Contrato c = new Contrato(size, idAtivo, u.getId(), preco, takeprofit, stoploss, quantidade, false, false);
-			this.contratos.put(size, c);//poe na lista total de contratos
-		}
+		criaContrato(u, idAtivo, takeprofit, stoploss, quantidade, false);
 	}
 
 	public  void criarContratoCompra(Utilizador u, int idAtivo, float takeprofit, float stoploss, int quantidade) throws AtivoInvalidoException, SaldoInsuficienteException {
+		criaContrato(u, idAtivo, takeprofit, stoploss, quantidade, true);
+	}
 
+	public void criaContrato(Utilizador u, int idAtivo, float takeprofit, float stoploss, int quantidade, boolean b) throws AtivoInvalidoException, SaldoInsuficienteException{
 		Ativo a = this.ativos.get(idAtivo).copy();
 		if (a == null)
 			throw new AtivoInvalidoException("Ativo nao existe");
 		else {
-			int size = this.contratos.size() + 1;
-			float preco = a.getPrecoVenda();
-			float valorTotal = preco * quantidade;
-			float saldo = u.getPlafom();
-			if (saldo < valorTotal)
-				throw new SaldoInsuficienteException("Saldo Insuficiente");
-			u.setPlafom(u.getPlafom() - valorTotal);
-			this.utilizadores.put(u.getId(), u);
-			Contrato c = new Contrato(size, idAtivo, u.getId(), preco, takeprofit, stoploss, quantidade, true, false);
-			this.contratos.put(size, c);//poe na lista total de contratos
+			addContratoAux(a, u, idAtivo, takeprofit, stoploss, quantidade, b);
 		}
+	}
+
+	public void addContratoAux(Ativo a, Utilizador u, int idAtivo, float takeprofit, float stoploss, int quantidade, boolean b) throws SaldoInsuficienteException {
+		float preco = a.getPrecoVenda();
+		float valorTotal = preco * quantidade;
+		float saldo = u.getPlafom();
+		int size = this.contratos.size() + 1;
+		if (saldo < valorTotal)
+			throw new SaldoInsuficienteException("Saldo Insuficiente");
+		u.setPlafom(saldo - valorTotal);
+		this.utilizadores.put(u.getId(), u);
+		Contrato c = new Contrato(size, idAtivo, u.getId(), preco, takeprofit, stoploss, quantidade, b, false);
+		this.contratos.put(size, c);//poe na lista total de contratos
 	}
 
 	public  List<Contrato> listarPortefolio(Utilizador u) {
@@ -130,7 +116,6 @@ public class ESSLtd {
 	public  void fecharContrato(Utilizador u, int idContrato) throws ContratoInvalidoException {
 		Contrato c = this.contratos.get(idContrato,u.getId());
 			if (c != null && !c.isEncerrado()) {
-
 				if (c.isCompra())
 					fecharContratoCompra(u, c);
 				else
@@ -138,15 +123,13 @@ public class ESSLtd {
 				return;
 			}
 			throw new ContratoInvalidoException("Este contrato nao existe ou nao pertence ao utilizador");
-
-
 	}
 
 
 	public  Ativo criarAtivo(String ativo, int id) throws IOException {
 		float compra;
 		float venda;
-		BigDecimal  zero= new BigDecimal("0.0");
+		BigDecimal zero= new BigDecimal("0.0");
 		Stock stock = YahooFinance.get(ativo);
 		BigDecimal precoVenda = stock.getQuote().getBid();
 		BigDecimal precoCompra = stock.getQuote().getAsk();
@@ -162,8 +145,6 @@ public class ESSLtd {
 		if (!this.ativos.containsValue(a))
 			this.ativos.put(id, a);
 		return a;
-
-
 	}
 
 
@@ -174,14 +155,8 @@ public class ESSLtd {
 		float valorAtual = a.getPrecoCompra() * c.getQuantidade();
 		float valorCompra = c.getPreco() * c.getQuantidade();
 		float lucro = valorAtual - valorCompra;
-		u.setPlafom(u.getPlafom() + valorCompra + lucro);
-		this.utilizadores.put(u.getId(), u);
-		Registo r = new Registo(size, u.getId(), a.getId(), lucro, c.getQuantidade());
-		this.registos.put(size, r);
-		c.setEncerrado(true);
-		this.contratos.put(c.getId(), c);
+		fecharContratoAux(a, u, c, lucro, valorCompra, size);
 	}
-
 
 	public  void fecharContratoVenda(Utilizador u, Contrato c) {
 		int size = this.registos.size() + 1;
@@ -190,7 +165,11 @@ public class ESSLtd {
 		float valorAtual = a.getPrecoVenda() * c.getQuantidade();
 		float valorVenda = c.getPreco() * c.getQuantidade();
 		float lucro = valorVenda - valorAtual;
-		u.setPlafom(u.getPlafom() + valorVenda + lucro);
+		fecharContratoAux(a, u, c, lucro, valorVenda, size);
+	}
+
+	public void fecharContratoAux(Ativo a, Utilizador u, Contrato c, float lucro, float valor, int size){
+		u.setPlafom(u.getPlafom() + valor + lucro);
 		this.utilizadores.put(u.getId(), u);
 		Registo r = new Registo(size, u.getId(), a.getId(), lucro, c.getQuantidade());
 		this.registos.put(size, r);
@@ -200,7 +179,6 @@ public class ESSLtd {
 
 	public List<Registo> listaRegistos(Utilizador u) {
 		List<Registo> registosList = new ArrayList<>();
-
 		for (Registo r : this.registos.values())
 			if (r.getIdUtilizador() == u.getId())
 				registosList.add(r);
@@ -212,14 +190,10 @@ public class ESSLtd {
 		u = this.utilizadores.get(c.getIdUtilizador());
 		fecharContrato(u, c.getId());
 		ativos.get(c.getIdAtivo()).removeObserver(c);
-
-
-
 	}
 
 
 	public  void updateEstadoPedido(Pedido p) {
-
 		int id = p.getEstado().getIdentificador();
 		this.pedidos.put(id, p);
 	}
@@ -251,7 +225,6 @@ public class ESSLtd {
 
 		Ativo a = this.ativos.get(idAtivo);
 		this.ativos.putSeguidor(u.getId(),a);
-
 	}
 }
 

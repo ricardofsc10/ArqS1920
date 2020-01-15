@@ -13,12 +13,10 @@ public class Utilizador implements Observer{
 	private float plafom;
     private List<Pedido.Memento> pedidosPendentes;
     private Pedido pedidoAtual;
-    private int posUltimoRespondido;// posicao no array do ultimo pedido respondido com sucesso
+    private int posUltimoRespondido;
+
 	/********************* NOVO REQUISITO********/
 	private Map<Integer,Ativo> aSeguir;
-
-
-
 
 	public Utilizador( int id, String username, String password, float plafom) {
 		this.id = id;
@@ -40,7 +38,7 @@ public class Utilizador implements Observer{
         this.pedidoAtual= new Pedido();
         this.posUltimoRespondido=-1;
     }
-// NEW
+
 	public List<Pedido.Memento> getPedidosSave() {
 	    return this.pedidosPendentes;
 	}
@@ -50,7 +48,6 @@ public class Utilizador implements Observer{
 		if(this.pedidosPendentes.isEmpty())
 			this.pedidoAtual.restoreFromMemento(this.pedidosPendentes.get(0));
 	}
-	//Qual é o objetivo desta função?
 
 
 	public Pedido getPedidoAtual() {
@@ -71,9 +68,6 @@ public class Utilizador implements Observer{
 		posUltimoRespondido++;
 	}
 
-
-
-	//OLD
 	public int getId() {
 		return id;
 	}
@@ -122,14 +116,6 @@ public class Utilizador implements Observer{
 		this.ess=ess;
 	}
 
-
-
-
-	/************************* NOVO REQUISITO**************/
-
-	public Map<Integer,Ativo> getaSeguir() {
-		return aSeguir;
-	}
 
 	public void setaSeguir(Map<Integer,Ativo> aSeguir) {
 		this.aSeguir = aSeguir;

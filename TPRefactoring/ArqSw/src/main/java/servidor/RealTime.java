@@ -53,7 +53,6 @@ class UpdateAtivo extends Thread{
 }
 
 public class RealTime {
-
     private ESSLtd ess;
 
     public RealTime(ESSLtd ees) {
@@ -76,13 +75,6 @@ public class RealTime {
        up3.start();
        up4.start();
        up5.start();
-
     }
-
-
-// Alteracao no metodo UpdateAtivo porque temos que instanciar ESS_ltd no contrato e estes sao instanciados como Observers no ativo
-    // logo é preciso ir ao DAO para associar ESS_ltd aos contratos
-
-
-    }
+}
 

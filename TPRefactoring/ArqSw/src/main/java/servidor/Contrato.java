@@ -1,6 +1,6 @@
 package servidor;
 
-
+import java.util.logging.Logger;
 
 public class Contrato implements Observer {
 
@@ -14,7 +14,7 @@ public class Contrato implements Observer {
 	private int quantidade;
 	private boolean compra;
 	private boolean encerrado;
-
+    Logger log = Logger.getLogger(Contrato.class.getName());
 
 	public Contrato(int id, int idAtivo, int idUtilizador, float preco, float takeProfit, float stopLess, int quantidade, boolean compra,boolean encerrado) {
 		this.id = id;
@@ -181,11 +181,7 @@ public class Contrato implements Observer {
 				if(valorVendaAtual >= stopLoss || valorVendaAtual <= takeProfit)
 					ess.fecharContratosComLimites(this);
 		} catch (ContratoInvalidoException e) {
-				e.printStackTrace();
+				log.info(e.getMessage());
 		  }
-
-
 	}
-
-
-	}
+}

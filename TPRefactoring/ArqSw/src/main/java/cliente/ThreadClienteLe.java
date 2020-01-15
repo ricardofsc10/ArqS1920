@@ -18,24 +18,20 @@ public class ThreadClienteLe implements Runnable {
     }
 
     public String leResposta() throws IOException {
-        String resposta = null;
-        resposta = in.readLine();
-        return resposta;
+        return in.readLine();
     }
 
     public void run() {
-        String resposta = null;
-
             try {
-                while ((resposta = in.readLine()) != null){
+                String resposta = in.readLine();
+                while (resposta != null){
                     log.info(resposta);
                     if(resposta.equals("TERMINADA"))
                         break;
                 }
             } catch (IOException e) {
-                log.info("Exception");
+                log.info(e.getMessage());
             }
-
     }
 }
 

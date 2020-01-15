@@ -11,9 +11,6 @@ public class Ativo implements Subject {
 	private String descricao;
 	private List<Observer> observers;
 
-
-
-
 	public Ativo( int id,float precoVenda, float precoCompra, String descricao) {
 		this.id=id;
 		this.precoVenda = precoVenda;
@@ -125,11 +122,4 @@ public class Ativo implements Subject {
 			this.precoVenda=precoVenda;
 			notifyObserver();
 	}
-
-
-
-
-
-
-
 }

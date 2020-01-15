@@ -1,8 +1,8 @@
 package servidor;
 
-
 import java.nio.channels.AsynchronousSocketChannel;
 import java.util.List;
+import java.util.logging.Logger;
 
 
 public class ThreadCliente {
@@ -10,12 +10,12 @@ public class ThreadCliente {
     private ESSLtd ess;
     private Comunicacao comunicacao;
     private static String terminar = "TERMINAR";
+    Logger log = Logger.getLogger(ThreadCliente.class.getName());
 
     public ThreadCliente(AsynchronousSocketChannel s, ESSLtd ess){
         this.user = null;
         this.ess= ess;
         this.comunicacao = new Comunicacao(s,this);
-
     }
 
     public boolean confirmar(String pedido){
@@ -57,17 +57,15 @@ public class ThreadCliente {
             user.setPedido(p);
             proximoPedido();
             /**********************NOVO REQUISITO***********/
-            // ENVIAR NOTIFICACOES
             List<String> not = ess.veNotificacoes(user);
             if(not.isEmpty()) {
                 enviarNotificacao(not);
             }
             /**********************************************/
-        } else {// CASO ESPECIAL DE LOGIN E REGISTO
+        } else {
             String resposta = interpretaPedido(pedido);
             comunicacao.adicionaQueue(resposta);
             comunicacao.send();
-            // enviar todos os pedidos pendentes
             if (user != null) {
                 enviarPedidosPendentes();
             }
@@ -88,7 +86,6 @@ public class ThreadCliente {
             case "LISTARATIVOS":
                 return listaAtivos();
             case "CONTRATOVENDA":
-                // criarContratoVenda(idUser,idAtivo,takeprofit,stoploss,quantidade)
                 return criarContratoVenda(campos[1],campos[2],campos[3],campos[4]);
             case "CONTRATOCOMPRA":
                 return criarContratoCompra(campos[1],campos[2],campos[3],campos[4]);
@@ -100,27 +97,26 @@ public class ThreadCliente {
                 return verRegistos();
             case "TERMINAR":
                 return terminarSessao();
+
 /****************** NOVO REQUISITO*************/
             case "SEGUIRATIVO":
                 return seguirAtivo(campos[1]);
             default:
                 return pedido + " NAO É UM COMANDO VÁLIDO\n";
-
         }
-
     }
 
 
 
     public String iniciarSessao(String username,String password ){
         boolean sucess = false;
-        String result = null;
+        String result;
         try {
             user= ess.iniciarSessao(username,password);
             sucess=true;
 
         } catch (UtilizadorInvalidoException e) {
-            e.printStackTrace();
+            log.info(e.getMessage());
         }
         finally {
             if(sucess)
@@ -134,14 +130,14 @@ public class ThreadCliente {
 
     public String registarUtilizador(String username,String password,String saldo ) {
         boolean sucess=false;
-        String result = null;
+        String result;
         try {
             int plafom = Integer.parseInt(saldo);
             ess.registarUtilizador(username,password,plafom);
             sucess=true;
 
         } catch (UsernameInvalidoException e) {
-            e.printStackTrace();
+            log.info(e.getMessage());
 
         }
         finally {
@@ -182,7 +178,7 @@ public class ThreadCliente {
             sucess = true;
 
         } catch (AtivoInvalidoException | SaldoInsuficienteException e) {
-            e.printStackTrace();
+            log.info(e.getMessage());
         } finally {
             if (sucess)
                 result = "Contrato criado com sucesso";
@@ -207,7 +203,7 @@ public class ThreadCliente {
             sucess = true;
 
         } catch (AtivoInvalidoException | SaldoInsuficienteException e) {
-            e.printStackTrace();
+            log.info(e.getMessage());
         } finally {
             if (sucess)
                 result = "Contrato criado com sucesso";
@@ -239,13 +235,12 @@ public class ThreadCliente {
             ess.fecharContrato(this.user,idcontrato);
             sucess =true;
         } catch (ContratoInvalidoException e) {
-            e.printStackTrace();
+            log.info(e.getMessage());
         } finally {
             if (sucess)
                 result ="Contrato fechado com sucesso";
             else
                 result= "Id invalido ";
-
         }
         return result;
     }
@@ -259,7 +254,6 @@ public class ThreadCliente {
             sb.append("\n");
         }
         return sb.toString();
-
     }
 
     public String terminarSessao(){
